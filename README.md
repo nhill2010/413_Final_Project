@@ -39,5 +39,5 @@ TECHNICAL INFORMATION -
 4. Projectile Flowchart
 5. Hero Flowchart
 
-PROJECT DESCRIPTION
+## PROJECT DESCRIPTION ##
 This document is about the game Perseus: New Frontier. Perseus: New Frontier is a Tower Defense game. This game will have 3 different levels that will have 10 waves of enemies that will try and evade the player’s defenses and reach the Colony. When the Colony runs out of health you lose the game. You will have to place Heroes to defend the Colony and keep it from losing health. There will be 3 different Heroes and 4 different enemy types. 
