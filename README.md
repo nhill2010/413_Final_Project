@@ -64,9 +64,9 @@ Prior to starting each level, the player is able to choose the type and placemen
 
 #### Level Design ####
 The entire game happens on the same “screen” which features the players base and defenses at the bottom of the screen. The remainder of the screen is the active play area. The difficulty of the game depends on how many incoming waves of enemies approach the player’s base. There are 3 levels of difficulty in the game, structured as such:
-1.3 waves of basic enemies ( Alien 1 and a few of Alien 2 )
-2.5 waves of intermediate enemies ( Alien 1 & 2 & a few of Alien 3 )
-3.10 waves of advanced enemies ( all 4 types of Aliens )
+1. 3 waves of basic enemies ( Alien 1 and a few of Alien 2 )
+2. 5 waves of intermediate enemies ( Alien 1 & 2 & a few of Alien 3 )
+3. 10 waves of advanced enemies ( all 4 types of Aliens )
 #### Combat element ####
 When the heroes are placed they will attack the enemies. Heroes will have a setting for whether to attack the first or last enemies or to attack the strongest one.
 Additional Elements
