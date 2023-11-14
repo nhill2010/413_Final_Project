@@ -1,6 +1,8 @@
-#Perseus: New Frontier#
+# Perseus: New Frontier #
+
 “Some heroes wear space helmets” - Space Cowboy
-###CS413##
+
+## CS413 ##
 
 
 Group:
