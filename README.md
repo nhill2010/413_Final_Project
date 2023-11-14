@@ -28,7 +28,7 @@ C. Level Design
 D. Combat element
 E. Additional Elements
 2. Layered Tetrad Analysis
-3. Gameplay Objects and Items
+-3. Gameplay Objects and Items
     -A. Heroes
     -B. Enemy
     -D. Projectile
