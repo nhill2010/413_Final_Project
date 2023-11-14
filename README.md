@@ -56,7 +56,7 @@ The game is a simple strategy game so you will need some basic strategy. You wil
 #### Level Progression ####
 Each wave will gain more and more enemies of hard types and then wave ten will have all kinds of enemies. The first couple waves will be of a couple weaker enemies that you will get gold for so you can place more heroes. The harder the enemy the more gold you get so the more you can place and upgrade the heroes. The 3 different levels will have a different path for the enemies to go and make it harder depending on the level.
 
-General Overview
+## General Overview ##
 Style and Genre
 This game is a third person “bird’s eye view” defense game. Each level appears below the player, and they are able to control and manipulate the structure of their base, including changing placement and type of characters used to defend the base.
 Player Interaction
