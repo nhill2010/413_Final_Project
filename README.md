@@ -57,8 +57,32 @@ The game is a simple strategy game so you will need some basic strategy. You wil
 Each wave will gain more and more enemies of hard types and then wave ten will have all kinds of enemies. The first couple waves will be of a couple weaker enemies that you will get gold for so you can place more heroes. The harder the enemy the more gold you get so the more you can place and upgrade the heroes. The 3 different levels will have a different path for the enemies to go and make it harder depending on the level.
 
 ## General Overview ##
-Style and Genre
+#### Style and Genre ####
 This game is a third person “bird’s eye view” defense game. Each level appears below the player, and they are able to control and manipulate the structure of their base, including changing placement and type of characters used to defend the base.
-Player Interaction
-Prior to starting each level, the player is able to choose the type and placement of the heroes they want to use to defend their base. During game play, the player can activate characters and their respective abilities in order to defend against waves of enemies. 
+#### Player Interaction ####
+Prior to starting each level, the player is able to choose the type and placement of the heroes they want to use to defend their base. During game play, the player can activate characters and their respective abilities in order to defend against waves of enemies.
+
+#### Level Design ####
+The entire game happens on the same “screen” which features the players base and defenses at the bottom of the screen. The remainder of the screen is the active play area. The difficulty of the game depends on how many incoming waves of enemies approach the player’s base. There are 3 levels of difficulty in the game, structured as such:
+1.3 waves of basic enemies ( Alien 1 and a few of Alien 2 )
+2.5 waves of intermediate enemies ( Alien 1 & 2 & a few of Alien 3 )
+3.10 waves of advanced enemies ( all 4 types of Aliens )
+#### Combat element ####
+When the heroes are placed they will attack the enemies. Heroes will have a setting for whether to attack the first or last enemies or to attack the strongest one.
+Additional Elements
+There will be gold and health for the player to keep track of. The gold will allow the player to buy and upgrade heroes. The health is the life force of the player and determines how many enemies have gotten to the Colony and will also determine if the player has lost.
+
+## Layered Tetrad Analysis ##
+#### Inscribed Layer: ####
+Aesthetics: Game screen will be three dimensional with a stationary camera looking down onto the game area. The colony object will be present with heroes to defend it and waves of enemies will charge the Colony. 
+
+Mechanics: Players will place heroes prior to the start of the level to defend the colony. Once level has started and enemies are charging, heroes will attack charging enemies. Players will have the ability to activate heroes as well during levels. The colony can receive damage from the aliens
+
+Narrative: Simple narrative:  You are the leader of a new space colony near Omicron Persei 8 and aliens are trying to destroy it. You call upon your greatest heroes to defend it at all costs.
+
+Technology: The game is implemented using Unity and C#. All of the objects in the game utilize Unity’s built in GameObjects and development classes in order to make everything function.
+
+#### Dynamic Layer: ####
+Aesthetics: The entire game is seen on every level of the game since the game is played and viewed from a third person bird’s eye perspective.
+
 
