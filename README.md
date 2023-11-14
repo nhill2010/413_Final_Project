@@ -13,12 +13,12 @@ Group:
 
 
 ## Table of Contents ##
-PROJECT DESCRIPTION \
-GAMEPLAY CONCEPTS \
-1. Goal\
-2. Losing\
-3. User Skill\
-4. Level Progression\
+PROJECT DESCRIPTION\
+GAMEPLAY CONCEPTS\
+1. Goal
+2. Losing
+3. User Skill
+4. Level Progression
 GAME MECHANICS  
 1. General Overview
 A. Style and Genre
