@@ -18,7 +18,8 @@ GAMEPLAY CONCEPTS
 1. Goal
 2. Losing
 3. User Skill
-4. Level Progression\
+4. Level Progression
+
 GAME MECHANICS  
 1. General Overview
 A. Style and Genre
@@ -28,10 +29,11 @@ D. Combat element
 E. Additional Elements
 2. Layered Tetrad Analysis
 3. Gameplay Objects and Items
-A. Heroes
-B. Enemy
-D. Projectile
-E. Colony\
+    -A. Heroes
+    -B. Enemy
+    -D. Projectile
+    -E. Colony
+
 TECHNICAL INFORMATION -
 1. Basic Technical Information
 2. Gamestate Script Flowchart
