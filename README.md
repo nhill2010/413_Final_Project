@@ -22,17 +22,17 @@ GAMEPLAY CONCEPTS
 
 GAME MECHANICS  
 1. General Overview
-A. Style and Genre
-B. Player Interaction
-C. Level Design
-D. Combat element
-E. Additional Elements
+    1. Style and Genre
+    2. Player Interaction
+    3. Level Design
+    4. Combat element
+    5. Additional Elements
 2. Layered Tetrad Analysis
--3. Gameplay Objects and Items
-    -A. Heroes
-    -B. Enemy
-    -D. Projectile
-    -E. Colony
+3. Gameplay Objects and Items
+    1. Heroes
+    2. Enemy
+    3. Projectile
+    4. Colony
 
 TECHNICAL INFORMATION -
 1. Basic Technical Information
