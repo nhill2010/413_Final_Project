@@ -14,11 +14,11 @@ Group:
 
 ## Table of Contents ##
 PROJECT DESCRIPTION\
-GAMEPLAY CONCEPTS\
+GAMEPLAY CONCEPTS
 1. Goal
 2. Losing
 3. User Skill
-4. Level Progression
+4. Level Progression\
 GAME MECHANICS  
 1. General Overview
 A. Style and Genre
@@ -31,7 +31,7 @@ E. Additional Elements
 A. Heroes
 B. Enemy
 D. Projectile
-E. Colony
+E. Colony\
 TECHNICAL INFORMATION -
 1. Basic Technical Information
 2. Gamestate Script Flowchart
