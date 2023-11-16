@@ -106,23 +106,23 @@ Technology: There is no significant cultural benefit to the technology being use
 
 ## Gameplay Objects and Items ##
 
-#### Heros ####
+### Heros ###
 
 ![heros](https://github.com/Amilizia12/413_Final_Project/assets/113862554/ad1fe652-149e-4437-bbc5-143dd21ec62a) \
 This object costs gold to create, and protects the Colony. Heroes shoot projectiles at enemies within a range. 
 
 
-#### Enemy ####
+### Enemy ###
 
 ![enemies](https://github.com/Amilizia12/413_Final_Project/assets/113862554/7a407e7f-3b0d-4ddf-a874-0b9fffe286d3) \
 This object moves across a predetermined path, intending to defeat the Colony. The player earns gold for defeating this. 
 
-#### The Colony ####
+### The Colony ###
 
 ![civilization](https://github.com/Amilizia12/413_Final_Project/assets/113862554/b7b74bab-9909-4145-a1cc-35b3f661b819) \
 This is the target that heroes need to protect from enemies. When the Colony runs out of health, the player loses the game. 
 
-#### Projectile ####
+### Projectile ###
 ![projectile](https://github.com/Amilizia12/413_Final_Project/assets/113862554/fd7ca57d-e4d6-4c6f-8d03-9667772a9868) \
 
 This object is used by Heroes to damage Enemies. The projectile will move toward a target, and can collide with an enemy before it exits the range of the hero. 
