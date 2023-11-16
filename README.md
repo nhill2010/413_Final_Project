@@ -86,3 +86,21 @@ Technology: The game is implemented using Unity and C#. All of the objects in th
 Aesthetics: The entire game is seen on every level of the game since the game is played and viewed from a third person bird’s eye perspective.
 
 
+Mechanics: During game play, the player is responsible for managing their status, including Colony health, hero health, and powerups. The heroes and the Colony can both receive damage from the enemies, and the player must strategically manage these things during the game.
+
+Narrative: The narrative remains the same as the game progresses, but the enemies get progressively harder as the waves approach the Colony and similarly as the levels progress.
+
+Technology: During game play, the technology is governed by collision detection and a series of flags that determine whether or not the enemies, heroes and/or the Colony has run out of health.
+
+Cultural Layer: Since the game will be for the time being, only developed up to prototype, we will leave the cultural layer fairly brief and general.
+
+Aesthetics: The game employs a simple graphical style so as to remain minimalistic so as to not be overwhelming on small mobile screens. 
+
+Mechanics: Since this game is strategy based, players will converse on potential “winning” strategies, including those which may yield the most gold, the most tradeoffs, or other such tropes.
+
+Narrative: Fans will wonder why the aliens keep attacking, question what they are protecting, and ultimately, if the violence is worth it in the end. These discussions will start as whispers in dingy chat rooms and allies behind GameStop, but gradually roar into a culture movement. Once peak “McDonalds happy meal toy?” status is reached, fans will ultimately demand a  Perseus: New Frontier II, but will inevitably criticize it for not being as good as the first. 
+
+Technology: There is no significant cultural benefit to the technology being used. 
+
+
+
