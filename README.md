@@ -114,4 +114,19 @@ This object costs gold to create, and protects the Colony. Heroes shoot projecti
 
 #### Enemy ####
 
-![enemies](https://github.com/Amilizia12/413_Final_Project/assets/113862554/7a407e7f-3b0d-4ddf-a874-0b9fffe286d3)
+![enemies](https://github.com/Amilizia12/413_Final_Project/assets/113862554/7a407e7f-3b0d-4ddf-a874-0b9fffe286d3) \
+This object moves across a predetermined path, intending to defeat the Colony. The player earns gold for defeating this. 
+
+#### The Colony ####
+
+![civilization](https://github.com/Amilizia12/413_Final_Project/assets/113862554/b7b74bab-9909-4145-a1cc-35b3f661b819) \
+This is the target that heroes need to protect from enemies. When the Colony runs out of health, the player loses the game. 
+
+#### Projectile ####
+![projectile](https://github.com/Amilizia12/413_Final_Project/assets/113862554/fd7ca57d-e4d6-4c6f-8d03-9667772a9868) \
+
+This object is used by Heroes to damage Enemies. The projectile will move toward a target, and can collide with an enemy before it exits the range of the hero. 
+
+## TECHNICAL INFORMATION ##
+Basic Technical Information \
+Perseus: New Frontier will be implemented using Unity and C#. Objects of the heroes class will keep track of enemies within their designated range. Towers will periodically construct a projectile to target a specific enemy, determined by the targeting setting. Enemies move along a predetermined path, and damage the Colony when they reach the end of the path. Creating heroes requires gold, which is earned by defeating enemies.
