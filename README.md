@@ -106,4 +106,12 @@ Technology: There is no significant cultural benefit to the technology being use
 
 ## Gameplay Objects and Items ##
 
+#### Heros ####
 
+![heros](https://github.com/Amilizia12/413_Final_Project/assets/113862554/ad1fe652-149e-4437-bbc5-143dd21ec62a)
+This object costs gold to create, and protects the Colony. Heroes shoot projectiles at enemies within a range. 
+
+
+#### Enemy ####
+
+![enemies](https://github.com/Amilizia12/413_Final_Project/assets/113862554/7a407e7f-3b0d-4ddf-a874-0b9fffe286d3)
