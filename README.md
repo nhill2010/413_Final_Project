@@ -132,3 +132,13 @@ Basic Technical Information \
 Perseus: New Frontier will be implemented using Unity and C#. Objects of the heroes class will keep track of enemies within their designated range. Towers will periodically construct a projectile to target a specific enemy, determined by the targeting setting. Enemies move along a predetermined path, and damage the Colony when they reach the end of the path. Creating heroes requires gold, which is earned by defeating enemies.
 
 ### Enemy Script Flowchart ###
+![flowchart4](https://github.com/Amilizia12/413_Final_Project/assets/113862554/d41ad68d-fdb0-45ff-9079-1bb93e881d71) \
+
+### Projectile Flowchart ###
+![flowchart3](https://github.com/Amilizia12/413_Final_Project/assets/113862554/24039b30-e99c-4214-9325-61191cae71fc) \
+
+### Hero Flowchart ###
+![flowchart2](https://github.com/Amilizia12/413_Final_Project/assets/113862554/ec0b17dc-1c70-4be0-86aa-8edca92de371) \
+
+### GameState Flowchart ###
+![flowchart1](https://github.com/Amilizia12/413_Final_Project/assets/113862554/397b0763-ad10-4a13-9438-45dd5137e9cf) \
