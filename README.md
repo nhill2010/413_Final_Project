@@ -130,3 +130,5 @@ This object is used by Heroes to damage Enemies. The projectile will move toward
 ## TECHNICAL INFORMATION ##
 Basic Technical Information \
 Perseus: New Frontier will be implemented using Unity and C#. Objects of the heroes class will keep track of enemies within their designated range. Towers will periodically construct a projectile to target a specific enemy, determined by the targeting setting. Enemies move along a predetermined path, and damage the Colony when they reach the end of the path. Creating heroes requires gold, which is earned by defeating enemies.
+
+### Enemy Script Flowchart ###
