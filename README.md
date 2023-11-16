@@ -92,7 +92,7 @@ Narrative: The narrative remains the same as the game progresses, but the enemie
 
 Technology: During game play, the technology is governed by collision detection and a series of flags that determine whether or not the enemies, heroes and/or the Colony has run out of health.
 
-####Cultural Layer:####
+#### Cultural Layer: ####
 Since the game will be for the time being, only developed up to prototype, we will leave the cultural layer fairly brief and general.
 
 Aesthetics: The game employs a simple graphical style so as to remain minimalistic so as to not be overwhelming on small mobile screens. 
@@ -103,5 +103,7 @@ Narrative: Fans will wonder why the aliens keep attacking, question what they ar
 
 Technology: There is no significant cultural benefit to the technology being used. 
 
+
+## Gameplay Objects and Items ##
 
 
