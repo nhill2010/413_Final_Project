@@ -1,0 +1,139 @@
+                    ********                      ********
+   ************************ GIT/GitHub CHEET SHEET ************************
+            	    ********                      ********
+
+--------------Helpful Links-----------------
+
+https://git-scm.com/docs
+
+--------------General commands--------------
+
+1. git help 
+	- shows help menue
+
+2. git log
+	- shows history of changes/commits on current branch.
+
+3. git status
+	- shows status of current enviroment. see what has been commited, changed, etc.
+
+--------------Making sure local is up to date with remote--------------
+
+4. git fetch
+	- will pull info from repository but not merge anything. 
+	- can use fetch and then status to see if branch is behind.
+
+5. git pull <branch>
+	- will fetch and merge so local branch is up to date with repository.
+	- can specity specific branch after pull if needed. Origin/Main/Master is default.
+
+--------------Working with branches--------------
+
+6. git branch OR git branch --list
+	-shows branches being worked on locally
+
+   git branch <branch name>
+	- Makes a new branch
+
+   git checkout <branch name>
+	-switches to branch
+
+  **git checkout -b <branch name>**
+	- SHORTCUT makes branch and switches to it.
+
+  git branch -d <branch name>
+	- DELETES branch
+
+--------------adding/commiting changes--------------
+
+6. git add (file1 file2 file3)
+	- Add files to staging area in preperation to commit. 
+	- flags/options: -A or "." can use be used to add all files to stagingi without having to list them. 
+
+7. git commit (file1 file2 file3)
+	- used to commit files.
+	- Flags:
+		-m allows you to add a commit message without it opening text editor ( I use this!) 
+		eg. "git commit -m "YOUR MESSAGE HERE"
+
+--------------Pushing to GitHub--------------
+
+8. git push -u origin <branch name you are pushing>
+	- ***This is for adding a new branch to repository***
+	- will push your branch to remote repository.
+	- will need to go onto github.com and create a pull request to have it merged with another branch/main
+
+  git push origin <branch name>
+	-this is used for pushing to an existing branch on repository
+
+
+
+--------------General Work Flow Example--------------
+
+----Creating a branch and merging it with main ( One time use branch )----
+
+Git pull OR git pull origin	---Make sure local is up to date with remote repository
+
+git status			--- check local is up to date
+
+git checkout -b MY_BRANCH	--- make a branch "MY_BRANCH" and checkout/switch to it
+
+do some work on test.txt
+
+git status			--- Will show untracked files as red
+
+git add test.txt OR git add -A
+
+git commit -m "Made some random changes"
+
+git status			---check files are green now
+
+git log				--- can check if commits are tracked. optional
+
+git pull
+
+git checkout main		---switch to main branch
+
+git branch 			----makes sure you see a *main. shows you are on main branch.
+
+git push -u origin MY_BRANCH	---Pushes new branch to github
+
+(NOTE: if you want to keep working on this branch and not merge it, dont continue. it will now live as a branch on github.)
+
+log onto github and make a pull request
+
+git branch -d MY_BRANCH		--- Delete branch since it has been merged with main on github.
+
+
+----using a branch that is already on github----
+
+(NOTE: if branch is NOT on computer)
+
+git fetch origin
+
+git branch -a		--- look for the branch you want. it will be prefixed with "remotes/origin"
+
+git checkout -b local_MY_BRANCH	origin/MY_BRANCH 	--- Make a "local_MY_BRANCH" that is a copy of remote.
+
+(NOTE: this is where two options above converge)
+
+git branch		--- confirm you are on branch you want.
+
+git status		--- just check there are no issues.
+
+Do some work on test2.txt
+
+git add -A
+
+git commit -m "updated file."
+
+git status
+
+git pull MY_BRANCH	---Makes sure all files are up to date on branch. catches merge conflicts. **DO AFTER COMMIT
+
+git status
+
+git push
+
+
+
