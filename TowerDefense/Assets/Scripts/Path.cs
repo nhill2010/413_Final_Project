@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path
+public class Path : MonoBehaviour
 {
     public List<Vector3> coordinates;
+    public GameObject outlineCube;
+    public GameObject backgroundCube;
+    public GameObject outlineCylinder;
+    public GameObject backgroundCylinder;
 
     // constructor for Path: must be called before using other methods
-    public Path(List<Vector3> pathCoors)
+    public void Initialize(List<Vector3> pathCoors, float pathLength, float outlineLength)
     {
         coordinates = pathCoors;
+        CreatePhysicalPath(pathLength, outlineLength);
     }
 
     public Vector3 Head()
@@ -75,5 +80,71 @@ public class Path
     public PathIterator Begin(float speed)
     {
         return new PathIterator(this, speed);
+    }
+
+
+    // create physical path for Path
+    /*
+     * Creates a circle at each coordinate, and rectangle between each circle. 
+     * Background circles/rectangles will create space inside the path
+     *   to create an outline
+     */
+    private void CreatePhysicalPath( float pathLength, float outlineLength )
+    {
+        Vector3 currentCoor, nextCoor;
+        Vector3 outlineScale, backgroundScale;
+        int coorInd;
+
+        // rectangle section
+        for( coorInd = 0; coorInd + 1 < coordinates.Count; coorInd++ )
+        {
+            GameObject outlineRectGO = Instantiate(outlineCube);
+            GameObject backgroundRectGO = Instantiate(backgroundCube);
+            currentCoor = coordinates[coorInd];
+            nextCoor = coordinates[coorInd + 1];
+
+            outlineRectGO.transform.position = (currentCoor + nextCoor) * 0.5f;
+            backgroundRectGO.transform.position = (currentCoor + nextCoor) * 0.5f;
+
+            outlineScale.x = (currentCoor - nextCoor).magnitude;
+            outlineScale.y = pathLength;
+            outlineScale.z = .001f;
+
+            backgroundScale.x = outlineScale.x;
+            backgroundScale.y = outlineScale.y - outlineLength;
+            backgroundScale.z = .002f;
+
+            outlineRectGO.transform.localScale = outlineScale;
+            backgroundRectGO.transform.localScale = backgroundScale;
+
+            // positive z rotation rotates counter clock wise (in degrees)
+            // tan(angle) = dy / dx
+            Vector3 rotation = Vector3.zero;
+            rotation.z = Mathf.Rad2Deg * Mathf.Atan((nextCoor.y - currentCoor.y) / (nextCoor.x - currentCoor.x));
+            outlineRectGO.transform.eulerAngles = rotation;
+            backgroundRectGO.transform.eulerAngles = rotation;
+        }
+
+
+        // cylinder section
+        // set cylinder scales for background and outline
+        outlineScale.x = pathLength;
+        outlineScale.z = pathLength;
+        backgroundScale.x = pathLength - outlineLength;
+        backgroundScale.z = pathLength - outlineLength;
+        // make the y scale flat
+        backgroundScale.y = .002f;
+        outlineScale.y = .001f;
+        for ( coorInd = 0; coorInd < coordinates.Count; coorInd++ )
+        {
+            // create a cylinder at each coordinate
+            GameObject outlineCircleGO = Instantiate(outlineCylinder);
+            GameObject backgroundCircleGO = Instantiate(backgroundCylinder);
+            currentCoor = coordinates[coorInd];
+            outlineCircleGO.transform.position = currentCoor;
+            backgroundCircleGO.transform.position = currentCoor;
+            outlineCircleGO.transform.localScale = outlineScale;
+            backgroundCircleGO.transform.localScale = backgroundScale;
+        }
     }
 }

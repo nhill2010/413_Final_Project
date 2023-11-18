@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WaveTester : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class WaveTester : MonoBehaviour
     public GameObject wavePrefab;
     public GameObject enemyPrefab;
     public GameObject enemyPrefab2;
+    public GameObject pathPrefab;
     float speed = .4f;
     int numEnemies = 10;
 
@@ -23,7 +25,9 @@ public class WaveTester : MonoBehaviour
         //pathCoors.Reverse(); // reverse coordinates
 
         // create a path from the coordinates
-        Path myPath = new Path(pathCoors);
+        GameObject pathGO = Instantiate(pathPrefab);
+        Path myPath = pathGO.GetComponent<Path>();
+        myPath.Initialize(pathCoors, 17.5f, 2.5f);
 
         // create a wave
         GameObject myWave = Instantiate(wavePrefab);
