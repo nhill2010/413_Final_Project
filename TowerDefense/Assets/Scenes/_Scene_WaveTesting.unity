@@ -231,6 +231,7 @@ MonoBehaviour:
   wavePrefab: {fileID: 98943189848181376, guid: 7bace20167efb1d43849dbb271764819, type: 3}
   enemyPrefab: {fileID: 726726633328918172, guid: 320499274bb2d9745a332b142fe6f970, type: 3}
   enemyPrefab2: {fileID: 2617143700200901817, guid: 04ef0fb51aad75349bd073ef8c7f41bf, type: 3}
+  pathPrefab: {fileID: 9022901433475185932, guid: c1f1581588879d440abff4828dc44323, type: 3}
 --- !u!1 &2141766888
 GameObject:
   m_ObjectHideFlags: 0
