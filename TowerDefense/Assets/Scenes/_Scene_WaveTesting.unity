@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 277347127}
   - component: {fileID: 277347126}
   - component: {fileID: 277347129}
+  - component: {fileID: 277347130}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -232,6 +233,19 @@ MonoBehaviour:
   enemyPrefab: {fileID: 726726633328918172, guid: 320499274bb2d9745a332b142fe6f970, type: 3}
   enemyPrefab2: {fileID: 2617143700200901817, guid: 04ef0fb51aad75349bd073ef8c7f41bf, type: 3}
   pathPrefab: {fileID: 9022901433475185932, guid: c1f1581588879d440abff4828dc44323, type: 3}
+--- !u!114 &277347130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277347125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425038fba8463c94bba291362e011d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToSpawn: {fileID: 1391541153952812289, guid: 89b3924449db94f47b0e97138640c870, type: 3}
 --- !u!1 &2141766888
 GameObject:
   m_ObjectHideFlags: 0
