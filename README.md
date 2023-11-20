@@ -108,22 +108,22 @@ Technology: There is no significant cultural benefit to the technology being use
 
 ### Heros ###
 
-![heros](https://github.com/Amilizia12/413_Final_Project/assets/113862554/ad1fe652-149e-4437-bbc5-143dd21ec62a) \
+ ![heros](https://github.com/nhill2010/413_Final_Project/assets/113862554/7bfb115b-0424-4f34-96de-5f3e290718fa) \
 This object costs gold to create, and protects the Colony. Heroes shoot projectiles at enemies within a range. 
 
 
 ### Enemy ###
 
-![enemies](https://github.com/Amilizia12/413_Final_Project/assets/113862554/7a407e7f-3b0d-4ddf-a874-0b9fffe286d3) \
+![enemies](https://github.com/nhill2010/413_Final_Project/assets/113862554/d22a89ef-cc2e-4e56-a4b7-97ce3eb9134d) \
 This object moves across a predetermined path, intending to defeat the Colony. The player earns gold for defeating this. 
 
 ### The Colony ###
 
-![civilization](https://github.com/Amilizia12/413_Final_Project/assets/113862554/b7b74bab-9909-4145-a1cc-35b3f661b819) \
+![civilization](https://github.com/nhill2010/413_Final_Project/assets/113862554/1a0c1914-8d4f-41b9-8f87-731921cf62bd) \
 This is the target that heroes need to protect from enemies. When the Colony runs out of health, the player loses the game. 
 
 ### Projectile ###
-![projectile](https://github.com/Amilizia12/413_Final_Project/assets/113862554/fd7ca57d-e4d6-4c6f-8d03-9667772a9868) \
+![projectile](https://github.com/nhill2010/413_Final_Project/assets/113862554/baae80be-b097-4eb3-9096-33f08deb1049)\
 
 This object is used by Heroes to damage Enemies. The projectile will move toward a target, and can collide with an enemy before it exits the range of the hero. 
 
@@ -132,13 +132,14 @@ Basic Technical Information \
 Perseus: New Frontier will be implemented using Unity and C#. Objects of the heroes class will keep track of enemies within their designated range. Towers will periodically construct a projectile to target a specific enemy, determined by the targeting setting. Enemies move along a predetermined path, and damage the Colony when they reach the end of the path. Creating heroes requires gold, which is earned by defeating enemies.
 
 ### Enemy Script Flowchart ###
-![flowchart4](https://github.com/Amilizia12/413_Final_Project/assets/113862554/d41ad68d-fdb0-45ff-9079-1bb93e881d71) \
+ 
+![flowchart4](https://github.com/nhill2010/413_Final_Project/assets/113862554/d401a658-66b2-4ddb-ad91-8568093c379b) \
 
 ### Projectile Flowchart ###
-![flowchart3](https://github.com/Amilizia12/413_Final_Project/assets/113862554/24039b30-e99c-4214-9325-61191cae71fc) \
+![flowchart3](https://github.com/nhill2010/413_Final_Project/assets/113862554/1de9e414-131e-4071-89d5-effac7649bb2) \
 
 ### Hero Flowchart ###
-![flowchart2](https://github.com/Amilizia12/413_Final_Project/assets/113862554/ec0b17dc-1c70-4be0-86aa-8edca92de371) \
+![flowchart2](https://github.com/nhill2010/413_Final_Project/assets/113862554/b1c66958-5b65-4a3a-8217-8feeca36949a) \
 
 ### GameState Flowchart ###
-![flowchart1](https://github.com/Amilizia12/413_Final_Project/assets/113862554/397b0763-ad10-4a13-9438-45dd5137e9cf) \
+![flowchart1](https://github.com/nhill2010/413_Final_Project/assets/113862554/499a4805-8571-44f4-b1a7-ca4d07f40b83) \
