@@ -45,7 +45,8 @@ public class WaveTester : MonoBehaviour
     private EnemyStats createEnemyStat()
     {
         EnemyStats enemyStat = new EnemyStats();
-        enemyStat.testVal = 0;
+        enemyStat.health = 1;
+        enemyStat.damageToColony = 1;
         enemyStat.speed = speed;
         enemyStat.prefab = enemyPrefab;
         return enemyStat;
@@ -55,7 +56,8 @@ public class WaveTester : MonoBehaviour
     private EnemyStats createEnemy2Stat()
     {
         EnemyStats enemyStat = new EnemyStats();
-        enemyStat.testVal = 1;
+        enemyStat.health = 3;
+        enemyStat.damageToColony = 2;
         enemyStat.speed = speed * 3;
         enemyStat.prefab = enemyPrefab2;
         return enemyStat;

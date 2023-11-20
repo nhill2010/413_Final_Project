@@ -10,7 +10,8 @@ public class EnemyStats
 {
     public float speed;
     public GameObject prefab;
-    public int testVal;
+    public int health;
+    public int damageToColony; // optional
 }
 
 public class Enemy : MonoBehaviour
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
             // if the iterator ended, destroy this
             if( pathIter.End() )
             {
-                Debug.Log("Completed Path: testVal = " + stats.testVal.ToString());
+                pathIter = null;
                 Destroy(this.gameObject);
             }
         }
