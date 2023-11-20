@@ -98,8 +98,8 @@ public class Path : MonoBehaviour
         // rectangle section
         for( coorInd = 0; coorInd + 1 < coordinates.Count; coorInd++ )
         {
-            GameObject outlineRectGO = Instantiate(outlineCube);
-            GameObject backgroundRectGO = Instantiate(backgroundCube);
+            GameObject outlineRectGO = Instantiate(outlineCube, this.transform);
+            GameObject backgroundRectGO = Instantiate(backgroundCube, this.transform);
             currentCoor = coordinates[coorInd];
             nextCoor = coordinates[coorInd + 1];
 
@@ -138,8 +138,8 @@ public class Path : MonoBehaviour
         for ( coorInd = 0; coorInd < coordinates.Count; coorInd++ )
         {
             // create a cylinder at each coordinate
-            GameObject outlineCircleGO = Instantiate(outlineCylinder);
-            GameObject backgroundCircleGO = Instantiate(backgroundCylinder);
+            GameObject outlineCircleGO = Instantiate(outlineCylinder, this.transform);
+            GameObject backgroundCircleGO = Instantiate(backgroundCylinder, this.transform);
             currentCoor = coordinates[coorInd];
             outlineCircleGO.transform.position = currentCoor;
             backgroundCircleGO.transform.position = currentCoor;
