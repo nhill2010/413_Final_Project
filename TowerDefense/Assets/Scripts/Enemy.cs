@@ -4,14 +4,16 @@ using UnityEngine;
 
 
 // class for EnemyStats: 
-// speed and prefab are only used for the Wave
+// speed, prefab, and diameter are only used in Wave
 // other values can be added here as needed
 public class EnemyStats
 {
     public float speed;
     public GameObject prefab;
+    public float diameter;
     public int health;
-    public int damageToColony; // optional
+    public float damageToColony; 
+    public float enemyCashValue; // how much money they are worth when destroyed
 }
 
 public class Enemy : MonoBehaviour
@@ -50,6 +52,20 @@ public class Enemy : MonoBehaviour
         pathIter = path.Begin(speed);
         transform.position = pathIter.pos();
     }
+
+    // attack the enemy for damage, destroy if <0 health
+    // return true if enemy was defeated
+    public bool attackEnemy(int damage)
+    {
+        this.stats.health -= damage;
+        if (this.stats.health <= 0)
+        {
+            Destroy(this.gameObject);
+            return true;
+        }
+        return false;
+    }
+
 }
 
 
