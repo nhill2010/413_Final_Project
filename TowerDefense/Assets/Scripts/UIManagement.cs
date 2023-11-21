@@ -55,9 +55,8 @@ public class UIManagement : MonoBehaviour
         // on enemy destroy:
         // if ( Enemy.enemyDestroyed )
         // {
-        //     // change the name of this
-        //     float reward = Enemy.money;
-        //     money += reward;
+            // float reward = Enemy.enemyCashValue;
+            // money += reward;
         // }
 
         // on hero purchase:
@@ -72,7 +71,7 @@ public class UIManagement : MonoBehaviour
     void UpdateHealth()
     {
         // get health value from Colony script
-        // healthLvl = colonyHealth;
+        // healthLvl = Colony.ColonyHealth;
         colonyHealthBar.value = healthLvl;
 
         // this will be responsible for changing the color of the health bar
