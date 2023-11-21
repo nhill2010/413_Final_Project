@@ -146,5 +146,7 @@ public class Path : MonoBehaviour
             outlineCircleGO.transform.localScale = outlineScale;
             backgroundCircleGO.transform.localScale = backgroundScale;
         }
+
+        this.transform.position += new Vector3(0, 0, 10);
     }
 }
