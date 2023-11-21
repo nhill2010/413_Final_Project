@@ -12,7 +12,8 @@ public class EnemyStats
     public GameObject prefab;
     public float diameter;
     public int health;
-    public int damageToColony; // optional
+    public float damageToColony; 
+    public float enemyCashValue; // how much money they are worth when destroyed
 }
 
 public class Enemy : MonoBehaviour
