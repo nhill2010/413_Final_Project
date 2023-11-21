@@ -14,7 +14,7 @@ using UnityEngine.UI;
 public class UIManagement : MonoBehaviour
 {
     // singleton for UI management
-    static private  UIManagement S;
+    static public UIManagement S = null;
 
     // these variables are set in Unity
     [ Header( "Set in Inspector" ) ]
@@ -50,13 +50,13 @@ public class UIManagement : MonoBehaviour
 
     // called when enemies are destroyed or
     // when heroes are purchased
-    public void UpdateMoney()
+    public void UpdateMoney(float moneyDifference)
     {
         // on enemy destroy:
         // if ( Enemy.enemyDestroyed )
         // {
-        float reward = enemyStats.enemyCashValue;
-        money += reward;
+        //float reward = enemyStats.enemyCashValue;
+        money += moneyDifference;
         // }
 
         // on hero purchase:

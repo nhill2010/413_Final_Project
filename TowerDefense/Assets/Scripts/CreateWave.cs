@@ -62,6 +62,7 @@ public class CreateWave : MonoBehaviour
         enemyStat.diameter = ENEMY_DIAMETER;
         enemyStat.health = 1;
         enemyStat.damageToColony = 1;
+        enemyStat.enemyCashValue = 100;
         enemyStat.speed = speed;
         enemyStat.prefab = enemyPrefab;
         return enemyStat;
@@ -74,6 +75,7 @@ public class CreateWave : MonoBehaviour
         enemyStat.diameter = ENEMY_DIAMETER;
         enemyStat.health = 3;
         enemyStat.damageToColony = 2;
+        enemyStat.enemyCashValue = 300;
         enemyStat.speed = speed * 3;
         enemyStat.prefab = enemyPrefab2;
         return enemyStat;

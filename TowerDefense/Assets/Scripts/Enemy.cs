@@ -42,8 +42,8 @@ public class Enemy : MonoBehaviour
             if( pathIter.End() )
             {
                 pathIter = null;
+                UIManagement.S.healthLvl -= stats.damageToColony;
                 Destroy(this.gameObject);
-                UI.UpdateMoney();
             }
         }
     }
@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour
         this.stats.health -= damage;
         if (this.stats.health <= 0)
         {
+            UIManagement.S.UpdateMoney(stats.enemyCashValue);
             Destroy(this.gameObject);
             return true;
         }
