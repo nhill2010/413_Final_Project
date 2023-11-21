@@ -30,7 +30,7 @@ public class UIManagement : MonoBehaviour
     public Slider colonyHealthBar;
     public float healthLvl;
     public int waveCurrent = 4;
-
+    public EnemyStats enemyStats;
     void Start()
     {
         S = this;
@@ -50,13 +50,13 @@ public class UIManagement : MonoBehaviour
 
     // called when enemies are destroyed or
     // when heroes are purchased
-    void UpdateMoney()
+    public void UpdateMoney()
     {
         // on enemy destroy:
         // if ( Enemy.enemyDestroyed )
         // {
-            // float reward = Enemy.enemyCashValue;
-            // money += reward;
+        float reward = enemyStats.enemyCashValue;
+        money += reward;
         // }
 
         // on hero purchase:
@@ -71,7 +71,7 @@ public class UIManagement : MonoBehaviour
     void UpdateHealth()
     {
         // get health value from Colony script
-        // healthLvl = Colony.ColonyHealth;
+        healthLvl = Colony.colonyHealth;
         colonyHealthBar.value = healthLvl;
 
         // this will be responsible for changing the color of the health bar
