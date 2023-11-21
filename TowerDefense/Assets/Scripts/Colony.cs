@@ -8,7 +8,7 @@ public class Colony : MonoBehaviour
 
     [Header( "Inscribed" ) ]
 
-    public float colonyHealth;
+    public static float colonyHealth;
 
     // public Rigidbody colony;
 
