@@ -51,6 +51,20 @@ public class Enemy : MonoBehaviour
         pathIter = path.Begin(speed);
         transform.position = pathIter.pos();
     }
+
+    // attack the enemy for damage, destroy if <0 health
+    // return true if enemy was defeated
+    public bool attackEnemy(int damage)
+    {
+        this.stats.health -= damage;
+        if (this.stats.health <= 0)
+        {
+            Destroy(this.gameObject);
+            return true;
+        }
+        return false;
+    }
+
 }
 
 
