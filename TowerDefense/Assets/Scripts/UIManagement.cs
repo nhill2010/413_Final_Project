@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,14 +29,14 @@ public class UIManagement : MonoBehaviour
     public GameObject healthBarPrefab;
     public Slider colonyHealthBar;
     public float healthLvl;
-    public int waveCurrent = 1;
+    public int waveCurrent = 4;
 
     void Start()
     {
         S = this;
         colonyHealthBar = healthBarPrefab.gameObject.GetComponent<Slider>();
         healthLvl = 1f;
-        money = 0.0f; // later this will be pulled from stored player data
+        money = 0f; // later this will be pulled from stored player data
         moneyText.text = string.Format( "${0:#0.0}", money );
     }
 
@@ -43,31 +44,73 @@ public class UIManagement : MonoBehaviour
     {
         moneyText.text = "$" + money;
         wavesText.text = "Wave " + waveCurrent + " / " + waveTotal;
-        healthLvl = 0.4f;
+        healthLvl = 1f;
         UpdateHealth();
+    }
+
+    // called when enemies are destroyed or
+    // when heroes are purchased
+    void UpdateMoney()
+    {
+        // on enemy destroy:
+        // if ( Enemy.enemyDestroyed )
+        // {
+        //     // change the name of this
+        //     float reward = Enemy.money;
+        //     money += reward;
+        // }
+
+        // on hero purchase:
+        // if ( Hero.heroPurchased )
+        // {
+        //     // change the name of this
+        //     float payment = Hero.money;
+        //     money -= payment;
+        // }
     }
 
     void UpdateHealth()
     {
-        Color color = colonyHealthBar.GetComponentsInChildren<Image>()[0].color;
-        // if colony has been hit:
-        // reduce health by certain amount ( different for each enemy )
+        // get health value from Colony script
+        // healthLvl = colonyHealth;
+        colonyHealthBar.value = healthLvl;
 
-        // this part doesn't work currently
-        if ( healthLvl <= 0.75f )
-        {
-            // change color to yellow
-            color = new Color( 255, 255, 0 );
-        }
-        if ( healthLvl <= 0.5f )
-        {
-            // change color to orange
-            color = new Color( 255, 127, 0 );
-        }
-        if ( healthLvl < 0.25f )
-        {
-            // change color to red
-            color = new Color( 255, 3, 0 );
-        }
+        // this will be responsible for changing the color of the health bar
+        // based on the level
+        // CURRENTLY: does not work
+        
+        // var fill = colonyHealthBar.GetComponentsInChildren<Image>().FirstOrDefault( t => t.name == "Fill" );
+        // if ( fill != null )
+        // {
+        //     Debug.Log( fill.gameObject.tag );
+        //     // Debug.Log( fill.color );
+        //     // Color color = colonyHealthBar.GetComponentsInChildren<Image>()[0].color;
+        //     // if colony has been hit:
+        //     // reduce health by certain amount ( different for each enemy )
+
+        //     if ( healthLvl < 0.25f )
+        //     {
+        //         // change color to red
+        //         fill.color = new Color( 255, 3, 0 );
+        //         Debug.Log( fill.color );
+        //     }            
+        //     else if ( healthLvl <= 0.5f )
+        //     {
+        //         // change color to orange
+        //         fill.color = new Color( 255, 127, 0 );
+        //         Debug.Log( fill.color );
+        //     }
+        //     else if ( healthLvl <= 0.75f )
+        //     {
+        //         // change color to yellow
+        //         fill.color = new Color( 255, 255, 0 );
+        //         Debug.Log( fill.color );
+        //     }
+        //     else
+        //     {
+        //         fill.color = new Color( 50, 255, 0 );
+        //         Debug.Log( fill.color );
+        //     }
+        // }
     }
 }
