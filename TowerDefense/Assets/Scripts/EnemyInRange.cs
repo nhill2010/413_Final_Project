@@ -13,12 +13,14 @@ public class EnemyInRange : MonoBehaviour
     {
         EnemyList = new List<Enemy>();
         coll = GetComponent<SphereCollider>();
+         InvokeRepeating("AttackEnemy", 2f, 2f);
     }
 
     // Update is called once per frame
     void Update()
     {
         EnemyList.RemoveAll(b=>b==null);
+
         
     }
 
@@ -27,10 +29,8 @@ public class EnemyInRange : MonoBehaviour
         if(other.CompareTag("Enemy"))
         {
             Enemy b = other.GetComponent<Enemy>();
-            Debug.Log(b.name);
             if(b != null)
             {
-                Debug.Log("Not NUll");
                 if(!EnemyList.Contains(b))
                 {
                     EnemyList.Add(b);
@@ -45,6 +45,15 @@ public class EnemyInRange : MonoBehaviour
         if(b!=null)
         {
             EnemyList.Remove(b);
+        }
+    }
+
+    private void AttackEnemy()
+    {
+        if ( EnemyList.Count >= 1 )
+        {
+            Debug.Log("hello");
+            EnemyList[0].attackEnemy(2);
         }
     }
 }
