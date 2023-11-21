@@ -35,7 +35,11 @@ namespace LP.ClickToPlace
 
                 if ( Physics.Raycast( ray, out hit ) )
                 {
-                    Instantiate( objToSpawn, hit.point, Quaternion.identity );
+                    // set hero's position to z=0, the plane with the enemies
+                    Vector3 heroPos = hit.point;
+                    heroPos.z = 0;
+                    Instantiate(objToSpawn, heroPos, Quaternion.identity);
+
                 }
             }
         }
