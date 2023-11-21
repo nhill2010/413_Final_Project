@@ -77,6 +77,7 @@ public class Wave : MonoBehaviour
         // set enemy on the path
         newEnemy.GetComponent<Enemy>().SetOnPath(enemyPath, _running_waveSegmentCurrent.enemyStats.speed);
         newEnemy.GetComponent<Enemy>().stats = _running_waveSegmentCurrent.enemyStats;
+        newEnemy.transform.localScale = Vector3.one * _running_waveSegmentCurrent.enemyStats.diameter;
 
         // recurse with one less enemy
         _running_remainingEnemies--;
