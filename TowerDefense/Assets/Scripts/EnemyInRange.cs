@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class EnemyInRange : MonoBehaviour
@@ -8,12 +9,14 @@ public class EnemyInRange : MonoBehaviour
     [Header("Dynamic")]
     public List<Enemy> EnemyList;
     private SphereCollider coll;
+    public float heroattackspeed = 2f;
+    public int HeroDamage = 2;
     // Start is called before the first frame update
     void Start()
     {
         EnemyList = new List<Enemy>();
         coll = GetComponent<SphereCollider>();
-         InvokeRepeating("AttackEnemy", 2f, 2f);
+        InvokeRepeating("AttackEnemy", heroattackspeed, heroattackspeed);
     }
 
     // Update is called once per frame
@@ -52,8 +55,8 @@ public class EnemyInRange : MonoBehaviour
     {
         if ( EnemyList.Count >= 1 )
         {
-            Debug.Log("hello");
-            EnemyList[0].attackEnemy(2);
+            EnemyList[0].attackEnemy(HeroDamage);
+            
         }
     }
 }
