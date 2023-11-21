@@ -4,12 +4,13 @@ using UnityEngine;
 
 
 // class for EnemyStats: 
-// speed and prefab are only used for the Wave
+// speed, prefab, and diameter are only used in Wave
 // other values can be added here as needed
 public class EnemyStats
 {
     public float speed;
     public GameObject prefab;
+    public float diameter;
     public int health;
     public int damageToColony; // optional
 }
