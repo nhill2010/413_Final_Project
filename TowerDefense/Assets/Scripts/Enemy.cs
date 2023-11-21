@@ -19,14 +19,15 @@ public class EnemyStats
 public class Enemy : MonoBehaviour
 {
     PathIterator pathIter = null;
-
+    
     // stats for enemy, will be set when created by wave
     public EnemyStats stats;
+    public UIManagement UI;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        stats.enemyCashValue = 100f;
     }
 
     // Update is called once per frame
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
             {
                 pathIter = null;
                 Destroy(this.gameObject);
+                UI.UpdateMoney();
             }
         }
     }
