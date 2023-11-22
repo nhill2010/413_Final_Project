@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 27303042483284780}
   - component: {fileID: 3301536920836258734}
   - component: {fileID: 2881708158924654511}
+  - component: {fileID: 7207171128343822425}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -118,3 +119,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424952161e8fbf43b2124dfaa97a970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 0}
+--- !u!54 &7207171128343822425
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726726633328918172}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
