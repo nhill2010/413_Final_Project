@@ -28,6 +28,9 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         stats.enemyCashValue = 100f;
+        stats.damageToColony = 0.05f;
+        // damageToColony will need to change based on enemy type
+        // and possible based on level as well
     }
 
     // Update is called once per frame
