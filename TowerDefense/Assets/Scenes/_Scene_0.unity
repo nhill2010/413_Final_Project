@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -655,6 +655,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1382529460093232484, guid: 166e755195f60e142bf692232775e80d, type: 3}
   m_PrefabInstance: {fileID: 328199678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &346264772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6789034789172962263, guid: 166e755195f60e142bf692232775e80d, type: 3}
+  m_PrefabInstance: {fileID: 328199678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400667780
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +801,7 @@ MonoBehaviour:
   money: 0
   waveTotal: 10
   changeHeroButton: {fileID: 3955288357480802283, guid: a2a9c85424994e44ba851d820ae26ced, type: 3}
-  healthBarPrefab: {fileID: 6789034789172962263, guid: 166e755195f60e142bf692232775e80d, type: 3}
+  healthBarPrefab: {fileID: 346264772}
   colonyHealthBar: {fileID: 0}
   healthLvl: 0
   waveCurrent: 4
