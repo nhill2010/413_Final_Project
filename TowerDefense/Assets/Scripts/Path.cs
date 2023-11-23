@@ -149,4 +149,14 @@ public class Path : MonoBehaviour
 
         this.transform.position += new Vector3(0, 0, 10);
     }
+
+    // get coordinate at index: only needed for iterator
+    // read only
+    public Vector3 this[int index]
+    {
+        get
+        {
+            return coordinates[index];
+        }
+    }
 }
