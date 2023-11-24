@@ -24,14 +24,14 @@ public class Colony : MonoBehaviour
         
     }
 
-        private void OnTriggerEnter( Collider collider )
+    private void OnTriggerEnter( Collider collider )
     {
         Debug.Log( collider.gameObject.name );
         Enemy enemy = collider.gameObject.GetComponent<Enemy>();
 
         if( enemy != null )
         {
-            colonyHealth -= enemy.stats.damageToColony;
+            colonyHealth -= enemy.damage;
             Debug.Log( colonyHealth );
 
             //this may need to be changed if we decide to make a DESTROY_ENEMY() elsewhere.
