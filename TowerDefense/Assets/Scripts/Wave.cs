@@ -10,6 +10,8 @@ public class SpawnData
 {
     public int numEnemies;
     public float delay;
+    public GameObject enemyPrefab;
+    public float enemyDiameter;
 }
 
 public class WaveSegment
@@ -35,12 +37,8 @@ public class Wave : MonoBehaviour
         enemyPath = wavePath;
     } 
 
-    public void addEnemiesToWave( EnemyStats enemyStats, int numEnemies, float spawnDelay )
+    public void addEnemiesToWave( EnemyStats enemyStats, SpawnData enemySpawnData )
     {
-        SpawnData enemySpawnData = new SpawnData();
-        enemySpawnData.numEnemies = numEnemies;
-        enemySpawnData.delay = spawnDelay;
-
         WaveSegment waveSegment = new WaveSegment();
         waveSegment.spawnData = enemySpawnData;
         waveSegment.enemyStats = enemyStats;
@@ -73,11 +71,11 @@ public class Wave : MonoBehaviour
         }
 
         // instantiate a new enemy
-        GameObject newEnemy = Instantiate(_running_waveSegmentCurrent.enemyStats.prefab);
+        GameObject newEnemy = Instantiate(_running_waveSegmentCurrent.spawnData.enemyPrefab);
         // set enemy on the path
-        newEnemy.GetComponent<Enemy>().SetOnPath(enemyPath, _running_waveSegmentCurrent.enemyStats.speed);
         newEnemy.GetComponent<Enemy>().stats = _running_waveSegmentCurrent.enemyStats;
-        newEnemy.transform.localScale = Vector3.one * _running_waveSegmentCurrent.enemyStats.diameter;
+        newEnemy.GetComponent<Enemy>().SetOnPath(enemyPath);
+        newEnemy.transform.localScale = Vector3.one * _running_waveSegmentCurrent.spawnData.enemyDiameter;
 
         // recurse with one less enemy
         _running_remainingEnemies--;

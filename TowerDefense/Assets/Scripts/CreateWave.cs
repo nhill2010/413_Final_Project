@@ -40,8 +40,8 @@ public class CreateWave : MonoBehaviour
         wave.SetPath(myPath);
 
         // add enemies to the wave (EnemyStats,numEnemies,spawnDelay)
-        wave.addEnemiesToWave(createEnemyStat(), numEnemies, 2.0f);
-        wave.addEnemiesToWave(createEnemy2Stat(), numEnemies, 1.0f);
+        wave.addEnemiesToWave(createEnemyStat(), createSpawnData());
+        wave.addEnemiesToWave(createEnemy2Stat(), createSpawnData2());
 
         // run the wave once
         Invoke("RunWave", waveDelay);
@@ -59,26 +59,41 @@ public class CreateWave : MonoBehaviour
     private EnemyStats createEnemyStat()
     {
         EnemyStats enemyStat = new EnemyStats();
-        enemyStat.diameter = ENEMY_DIAMETER;
         enemyStat.health = 1;
-        enemyStat.damageToColony = 1;
+        enemyStat.damageToColony = .1f;
         enemyStat.enemyCashValue = 100;
         enemyStat.speed = speed;
-        enemyStat.prefab = enemyPrefab;
         return enemyStat;
+    }
+
+    private SpawnData createSpawnData()
+    {
+        SpawnData spawnData = new SpawnData();
+        spawnData.enemyDiameter = ENEMY_DIAMETER;
+        spawnData.enemyPrefab = enemyPrefab;
+        spawnData.numEnemies = numEnemies;
+        spawnData.delay = waveDelay;
+        return spawnData;
     }
 
     // enemy with extra speed and second prefab
     private EnemyStats createEnemy2Stat()
     {
         EnemyStats enemyStat = new EnemyStats();
-        enemyStat.diameter = ENEMY_DIAMETER;
         enemyStat.health = 3;
-        enemyStat.damageToColony = 2;
+        enemyStat.damageToColony = .2f;
         enemyStat.enemyCashValue = 300;
         enemyStat.speed = speed * 3;
-        enemyStat.prefab = enemyPrefab2;
         return enemyStat;
     }
 
+    private SpawnData createSpawnData2()
+    {
+        SpawnData spawnData = new SpawnData();
+        spawnData.enemyDiameter = ENEMY_DIAMETER;
+        spawnData.enemyPrefab = enemyPrefab2;
+        spawnData.numEnemies = numEnemies;
+        spawnData.delay = waveDelay;
+        return spawnData;
+    }
 }

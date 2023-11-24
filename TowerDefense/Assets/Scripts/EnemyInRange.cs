@@ -55,8 +55,7 @@ public class EnemyInRange : MonoBehaviour
     {
         if ( EnemyList.Count >= 1 )
         {
-            EnemyList[0].attackEnemy(HeroDamage);
-            
+            EnemyList[0].health -= HeroDamage;
         }
     }
 }
