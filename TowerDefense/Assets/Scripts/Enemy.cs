@@ -71,7 +71,11 @@ public class Enemy : MonoBehaviour
     public float speed
     {
         get { return _stats.speed; }
-        set { _stats.speed = value; }
+        set 
+        {
+            _stats.speed = value;
+            pathIter.speed = _stats.speed;
+        }
     }
     
     // Start is called before the first frame update
