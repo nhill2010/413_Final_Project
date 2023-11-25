@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4873040906081424484}
   - component: {fileID: 4962700337911840610}
   - component: {fileID: -3134963506967301631}
-  - component: {fileID: 1592881977656537124}
+  - component: {fileID: -2716338724416648410}
   m_Layer: 0
   m_Name: Hero 1
   m_TagString: Untagged
@@ -158,7 +158,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1592881977656537124
+--- !u!114 &-2716338724416648410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,10 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1391541153952812289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e2b69c94283e58478a713a08b201f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 3908b1536de599c438600a38251bb825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList: []
-  loaded: 0
-  heroattackspeed: 2
-  HeroDamage: 2

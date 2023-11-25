@@ -12,8 +12,9 @@ public class CreateWave : MonoBehaviour
     public static float HEIGHT_BOUND = 8f;
     public static float WIDTH_BOUND = 18f;
     private float waveDelay = 3f;
+    private float spawnDelay = .4f;
     float speed = .1f;
-    int numEnemies = 10;
+    int numEnemies = 15;
     Wave wave = null;
     private static float PATH_WIDTH = HEIGHT_BOUND / 3.0f;
     private static float PATH_BORDER_WIDTH = PATH_WIDTH / 10.0f;
@@ -39,7 +40,7 @@ public class CreateWave : MonoBehaviour
         wave = Instantiate(wavePrefab).GetComponent<Wave>();
         wave.SetPath(myPath);
 
-        // add enemies to the wave (EnemyStats,numEnemies,spawnDelay)
+        // add enemies to the wave
         wave.addEnemiesToWave(createEnemyStat(), createSpawnData());
         wave.addEnemiesToWave(createEnemy2Stat(), createSpawnData2());
 
@@ -72,7 +73,7 @@ public class CreateWave : MonoBehaviour
         spawnData.enemyDiameter = ENEMY_DIAMETER;
         spawnData.enemyPrefab = enemyPrefab;
         spawnData.numEnemies = numEnemies;
-        spawnData.delay = waveDelay;
+        spawnData.delay = spawnDelay;
         return spawnData;
     }
 
@@ -93,7 +94,7 @@ public class CreateWave : MonoBehaviour
         spawnData.enemyDiameter = ENEMY_DIAMETER;
         spawnData.enemyPrefab = enemyPrefab2;
         spawnData.numEnemies = numEnemies;
-        spawnData.delay = waveDelay;
+        spawnData.delay = spawnDelay * 2;
         return spawnData;
     }
 }
