@@ -4,18 +4,47 @@ using UnityEngine;
 
 public class Hero : EnemyInRange
 {
-    public bool loaded = false; // starts not loaded
-    public float heroattackspeed = 2f;
-    public int HeroDamage = 2;
+    private bool loaded = false; // starts not loaded
+    private bool reloading = false;
+
+    // default damage/speed: override with children
+    public virtual int HeroDamage
+    {
+        get { return 1; }
+    }
+    public virtual float HeroAttackSpeed
+    {
+        get { return 2.0f; }
+    }
+    public virtual float RangeRadius
+    {
+        get { return 5.0f; }
+    }
+
+    // Attack is the only function to be overwritten by children
+    public virtual void Attack()
+    {
+        // verify at least one enemy exists
+        if (EnemyList.Count >= 1)
+        {
+            // damage the enemy
+            EnemyList[0].health -= HeroDamage;
+        }
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Reload", heroattackspeed);
+        // start reloading when created
+        Reload();
+        SphereCollider collider = this.transform.GetComponent<SphereCollider>();
+        collider.radius = RangeRadius;
     }
 
     // Update is called once per frame
-    public void FixedUpdate()
+    protected void FixedUpdate()
     {
         // update EnemyInRange first
         base.Update();
@@ -24,25 +53,29 @@ public class Hero : EnemyInRange
         if( loaded && EnemyList.Count > 0 )
         {
             Attack();
+            // set to not loaded, then reload
+            loaded = false;
+            Reload();
         }
     }
 
-    private void Attack()
+    public void Reload()
     {
-        // verify at least one enemy exists
-        if (EnemyList.Count >= 1)
+        // do not allow reload while already reloading
+        //   or already loaded
+        if( !reloading && !loaded )
         {
-            // damage the enemy
-            EnemyList[0].health -= HeroDamage;
+            // start reloading process, finish reloading using attackspeed
+            reloading = true;
+            Invoke("DoneReoading", HeroAttackSpeed);
         }
-        // set to not loaded, begin to reload
-        loaded = false;
-        Invoke("Reload", heroattackspeed);
-
     }
 
-    private void Reload()
+    // called after Reload completed, and only from Reload
+    private void DoneReoading()
     {
+        // reloading done, set loaded
         loaded = true;
+        reloading = false;
     }
 }
