@@ -113,8 +113,8 @@ public class UIManagement : MonoBehaviour
         // }
 
         // red, green, blue
-        // scale red from 0 to 255, 
-        // scale green from 255 to 0
+        // scale red from 0 to 1, 
+        // scale green from 1 to 0
         Color color = colonyHealthBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color;
         color.b = 0;
         color.g = colonyHealthBar.value;

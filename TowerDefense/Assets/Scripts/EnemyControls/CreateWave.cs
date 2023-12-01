@@ -60,7 +60,7 @@ public class CreateWave : MonoBehaviour
     private EnemyStats createEnemyStat()
     {
         EnemyStats enemyStat = new EnemyStats();
-        enemyStat.health = 1;
+        enemyStat.health = 2;
         enemyStat.damageToColony = .1f;
         enemyStat.enemyCashValue = 100;
         enemyStat.speed = speed;
@@ -81,7 +81,7 @@ public class CreateWave : MonoBehaviour
     private EnemyStats createEnemy2Stat()
     {
         EnemyStats enemyStat = new EnemyStats();
-        enemyStat.health = 3;
+        enemyStat.health = 6;
         enemyStat.damageToColony = .2f;
         enemyStat.enemyCashValue = 300;
         enemyStat.speed = speed * 1.5f;

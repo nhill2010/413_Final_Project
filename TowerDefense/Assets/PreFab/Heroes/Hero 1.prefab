@@ -171,3 +171,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList: []
+  EIRColliderPrefab: {fileID: 4355588320508869936, guid: 99504a156b490b84bbe6d9f41aec8d2b, type: 3}
+  linearProjectilePrefab: {fileID: 3642436622227158650, guid: c467d916bf5dc764f8b8d680e8b69eb3, type: 3}

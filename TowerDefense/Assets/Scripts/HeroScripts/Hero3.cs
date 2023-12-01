@@ -4,38 +4,46 @@ using UnityEngine;
 
 public class Hero3 : Hero
 {
+    public GameObject linearProjectilePrefab;
+
     public override int HeroDamage
     {
-        get { return 3; }
+        get { return 4; }
     }
     public override float HeroAttackSpeed
     {
-        get { return 2.0f; }
+        get { return .75f; }
     }
     public override float RangeRadius
     {
-        get { return 5.0f; }
+        get { return 7.0f; }
+    }
+    public float projectileSpeed
+    {
+        get { return 100f; }
+    }
+
+    public override int projectionFrames
+    {
+        get { return 1; }
     }
 
 
     // HeroDamage divided among any number of enemies
     public override void Attack()
     {
-        int remainingDamage = HeroDamage;
-        // iterate over all enemies
-        foreach (Enemy enemy in EnemyList)
+        // verify at least one enemy exists
+        if (EnemyList.Count >= 1)
         {
-            // attack enemy for remaining damage
-            enemy.health -= remainingDamage;
+            // create a projectile
+            GameObject projectileGO = Instantiate<GameObject>(linearProjectilePrefab);
+            LinearProjectile projectile = projectileGO.GetComponent<LinearProjectile>();
 
-            // convert extra damage into remainingDamage
-            remainingDamage = Mathf.Max(-enemy.health,0);
-
-            // stop if no damage remaining
-            if( remainingDamage <= 0 )
-            {
-                break;
-            }
+            // initialize the projectile in the direction of the nearest enemy
+            projectile.Init(this.transform.position,
+                            projectEnemyPosition( enemyClosestToColony ) - this.transform.position,
+                            projectileSpeed, HeroDamage, false, RangeRadius);
         }
     }
+
 }
