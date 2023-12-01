@@ -12,7 +12,7 @@ public class HeroSelectScreen : MonoBehaviour
     public int h1Price = 100,
                 h2Price = 250,
                 h3Price = 500;
-    static public int money = 0;
+    static public int money;
 
     void Awake()
     {
@@ -20,6 +20,7 @@ public class HeroSelectScreen : MonoBehaviour
             money = PlayerPrefs.GetInt( "Bank" );
         }
 
+        money = 0;
         PlayerPrefs.SetInt( "Bank", money );
 
         moneyText.text = "$" + money;
