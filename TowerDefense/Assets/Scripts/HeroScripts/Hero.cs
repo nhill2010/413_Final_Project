@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hero : EnemyInRange
 {
-    private bool loaded = false; // starts not loaded
+    private bool loaded = true; // starts loaded
     private bool reloading = false;
 
     // default damage/speed: override with children

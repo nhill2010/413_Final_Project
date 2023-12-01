@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 
@@ -28,6 +29,9 @@ public class Enemy : MonoBehaviour
 
     // stats for enemy, will be set when created by wave
     private EnemyStats _stats;
+    public GameObject healthBarPrefab; // prefab for healthBar
+    private HealthBar healthBar;
+    private int startHealth;
 
 
     // only used to initialize _stats
@@ -41,6 +45,7 @@ public class Enemy : MonoBehaviour
             {
                 throw new Exception("Attempted to Initialize non-positive Health");
             }
+            startHealth = value.health;
             _stats = new EnemyStats(value); 
         }
     }
@@ -54,6 +59,7 @@ public class Enemy : MonoBehaviour
         set
         {
             _stats.health = value;
+            healthBar.value = (float)health / (float)startHealth;
             if(_stats.health <= 0)
             {
                 UIManagement.S.UpdateMoney(_stats.enemyCashValue);
@@ -81,7 +87,11 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject healthbarGO = Instantiate<GameObject>(healthBarPrefab,this.gameObject.transform);
+        healthBar = healthbarGO.GetComponent<HealthBar>();
+        Vector3 healthBarPos = healthbarGO.transform.position;
+        healthBarPos.y = this.transform.localScale.y * 1f;
+        healthbarGO.transform.position = healthBarPos;
     }
 
     // Update is called once per frame
