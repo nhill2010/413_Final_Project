@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /********* OUTLINE **********
 * Colony health bar ( top center )
@@ -38,6 +39,8 @@ public class UIManagement : MonoBehaviour
         healthLvl = 1f;
         money = 0f; // later this will be pulled from stored player data
         moneyText.text = string.Format( "${0:#0.0}", money );
+
+        changeHeroButton.onClick.AddListener( HeroSelect );
     }
 
     void Update()
@@ -111,5 +114,11 @@ public class UIManagement : MonoBehaviour
         //         Debug.Log( fill.color );
         //     }
         // }
+    }
+
+    void HeroSelect()
+    {
+        Debug.Log( "BUTTON PRESSED" );
+        SceneManager.LoadScene( "HeroSelectScene" );
     }
 }
