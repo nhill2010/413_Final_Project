@@ -25,7 +25,7 @@ public class EnemyStats
 
 public class Enemy : MonoBehaviour
 {
-    PathIterator pathIter = null;
+    public PathIterator pathIter = null;
 
     // stats for enemy, will be set when created by wave
     private EnemyStats _stats;

@@ -171,4 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList: []
-  HeroDamage: 2
+  EIRColliderPrefab: {fileID: 4355588320508869936, guid: 99504a156b490b84bbe6d9f41aec8d2b, type: 3}
+  eirCollider: {fileID: 0}
+  circularProjectilePrefab: {fileID: 5223807464000493154, guid: 7c0d26ca49a52b840ba8b60e1534b744, type: 3}

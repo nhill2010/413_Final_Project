@@ -21,6 +21,11 @@ public class Hero : EnemyInRange
         get { return 5.0f; }
     }
 
+    public virtual int projectionFrames
+    {
+        get { return 0; }
+    }
+
     // Attack is the only function to be overwritten by children
     public virtual void Attack()
     {
@@ -39,8 +44,7 @@ public class Hero : EnemyInRange
     {
         // start reloading when created
         Reload();
-        SphereCollider collider = this.transform.GetComponent<SphereCollider>();
-        collider.radius = RangeRadius;
+        eirCollider.Init(GetComponent<EnemyInRange>(), RangeRadius);
     }
 
     // Update is called once per frame
@@ -77,5 +81,10 @@ public class Hero : EnemyInRange
         // reloading done, set loaded
         loaded = true;
         reloading = false;
+    }
+
+    public Vector3 projectEnemyPosition(Enemy enemy)
+    {
+        return (enemy.pathIter + projectionFrames).pos();
     }
 }
