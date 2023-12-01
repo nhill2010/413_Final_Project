@@ -84,7 +84,7 @@ public class CreateWave : MonoBehaviour
         enemyStat.health = 3;
         enemyStat.damageToColony = .2f;
         enemyStat.enemyCashValue = 300;
-        enemyStat.speed = speed * 3;
+        enemyStat.speed = speed * 1.5f;
         return enemyStat;
     }
 

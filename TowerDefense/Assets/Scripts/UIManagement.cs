@@ -77,7 +77,7 @@ public class UIManagement : MonoBehaviour
         // this will be responsible for changing the color of the health bar
         // based on the level
         // CURRENTLY: does not work
-        
+
         // var fill = colonyHealthBar.GetComponentsInChildren<Image>().FirstOrDefault( t => t.name == "Fill" );
         // if ( fill != null )
         // {
@@ -111,5 +111,14 @@ public class UIManagement : MonoBehaviour
         //         Debug.Log( fill.color );
         //     }
         // }
+
+        // red, green, blue
+        // scale red from 0 to 255, 
+        // scale green from 255 to 0
+        Color color = colonyHealthBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color;
+        color.b = 0;
+        color.g = colonyHealthBar.value;
+        color.r = 1 - colonyHealthBar.value;
+        colonyHealthBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = color;
     }
 }
