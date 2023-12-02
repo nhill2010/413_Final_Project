@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /********* OUTLINE **********
 * Colony health bar ( top center )
@@ -30,6 +31,7 @@ public class UIManagement : MonoBehaviour
     public Slider colonyHealthBar;
     public float healthLvl;
     public int waveCurrent = 4;
+
     void Start()
     {
         S = this;
@@ -37,6 +39,7 @@ public class UIManagement : MonoBehaviour
         healthLvl = 1f;
         money = 0f; // later this will be pulled from stored player data
         moneyText.text = string.Format( "${0:#0.0}", money );
+
     }
 
     void Update()
@@ -120,4 +123,5 @@ public class UIManagement : MonoBehaviour
         color.r = 1 - colonyHealthBar.value;
         colonyHealthBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = color;
     }
+
 }

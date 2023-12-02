@@ -11,6 +11,10 @@ namespace LP.ClickToPlace
         // for now, objToSpawn will be Hero1
         [ SerializeField ] GameObject objToSpawn = null;
         private Camera cam = null;
+        // min and max values define a range of the screen where
+        // the hero select button is - this will be a null range
+        private Vector2 voidRangeMins = new Vector2( -18, -10 ); // xmin, ymin
+        private Vector2 voidRangeMaxs = new Vector2( -14, -6 ); // xmax, ymax
 
         private void Start()
         {
@@ -35,11 +39,15 @@ namespace LP.ClickToPlace
 
                 if ( Physics.Raycast( ray, out hit ) )
                 {
-                    // set hero's position to z=0, the plane with the enemies
-                    Vector3 heroPos = hit.point;
-                    heroPos.z = 0;
-                    Instantiate(objToSpawn, heroPos, Quaternion.identity);
+                    // if click point not in void range
+                    if ( !( hit.point.x > voidRangeMins.x && hit.point.x < voidRangeMaxs.x ) ||
+                         !( hit.point.y > voidRangeMins.y && hit.point.y < voidRangeMaxs.y ) ) {
 
+                        // set hero's position to z=0, the plane with the enemies
+                        Vector3 heroPos = hit.point;
+                        heroPos.z = 0;
+                        Instantiate(objToSpawn, heroPos, Quaternion.identity);
+                    }
                 }
             }
         }
