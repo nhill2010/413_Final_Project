@@ -41,7 +41,6 @@ public class UIManagement : MonoBehaviour
         money = 0f; // later this will be pulled from stored player data
         moneyText.text = string.Format( "${0:#0.0}", money );
 
-        changeHeroButton.onClick.AddListener( HeroSelect );
     }
 
     void Update()
@@ -117,8 +116,4 @@ public class UIManagement : MonoBehaviour
         // }
     }
 
-    void HeroSelect()
-    {
-        SceneManager.LoadScene( "HeroSelectScreen" );
-    }
 }

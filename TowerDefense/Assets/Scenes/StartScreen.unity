@@ -296,6 +296,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1073021857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073021859}
+  - component: {fileID: 1073021858}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1073021858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073021857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40f81ab64a084b4b8721e4e39ba8899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1073021859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073021857}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 334.50644, y: 331.26538, z: -4.978427}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090200145
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +351,7 @@ GameObject:
   - component: {fileID: 1090200148}
   - component: {fileID: 1090200147}
   - component: {fileID: 1090200146}
-  - component: {fileID: 1090200149}
+  - component: {fileID: 1090200150}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -389,7 +433,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1090200149
+--- !u!114 &1090200150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -398,12 +442,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1090200145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47073c7c17c9da49b31b2c26eb8d94e, type: 3}
+  m_Script: {fileID: 11500000, guid: c40f81ab64a084b4b8721e4e39ba8899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rules: {fileID: 2096838732}
-  levels: {fileID: 2027565899}
-  store: {fileID: 1714210985}
 --- !u!1 &1115215507
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +712,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1714210986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1073021858}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HeroSelectScreen
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1714210986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,7 +1018,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2027565900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1073021858}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LevelSelect
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027565900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1244,7 +1309,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2096838733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1073021858}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HelpScreen
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2096838733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1292,3 +1369,4 @@ SceneRoots:
   - {fileID: 403669479}
   - {fileID: 165776949}
   - {fileID: 1476202413}
+  - {fileID: 1073021859}
