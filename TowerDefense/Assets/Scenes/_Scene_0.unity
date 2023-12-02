@@ -502,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2564236545071608140, guid: 86f3b7c5b80bfce449718136f3f84346, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 180
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 2564236545071608140, guid: 86f3b7c5b80bfce449718136f3f84346, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -604,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1382529460093232484, guid: 166e755195f60e142bf692232775e80d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 180
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 1382529460093232484, guid: 166e755195f60e142bf692232775e80d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425038fba8463c94bba291362e011d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToSpawn: {fileID: 1391541153952812289, guid: e9d65cd3b7eb8424c89dfe4c7ddbc9d1, type: 3}
+  objToSpawn: {fileID: 1391541153952812289, guid: 89b3924449db94f47b0e97138640c870, type: 3}
 --- !u!114 &400667785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8168144159843119334, guid: 9dbb88b2237ae5c499ade17a9776e605, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 180
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 8168144159843119334, guid: 9dbb88b2237ae5c499ade17a9776e605, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
