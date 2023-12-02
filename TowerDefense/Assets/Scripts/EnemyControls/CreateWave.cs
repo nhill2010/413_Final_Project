@@ -13,7 +13,6 @@ public class CreateWave : MonoBehaviour
     public static float WIDTH_BOUND = 18f;
     private float waveDelay = 3f;
     private float spawnDelay = .4f;
-    float speed = .1f;
     int numEnemies = 15;
     Wave wave = null;
     private static float PATH_WIDTH = HEIGHT_BOUND / 3.0f;
@@ -41,8 +40,8 @@ public class CreateWave : MonoBehaviour
         wave.SetPath(myPath);
 
         // add enemies to the wave
-        wave.addEnemiesToWave(createEnemyStat(), createSpawnData());
-        wave.addEnemiesToWave(createEnemy2Stat(), createSpawnData2());
+        wave.addEnemiesToWave(createSpawnData());
+        wave.addEnemiesToWave(createSpawnData2());
 
         // run the wave once
         Invoke("RunWave", waveDelay);
@@ -56,17 +55,6 @@ public class CreateWave : MonoBehaviour
         }
     }
 
-    // enemy with standard speed and first prefab
-    private EnemyStats createEnemyStat()
-    {
-        EnemyStats enemyStat = new EnemyStats();
-        enemyStat.health = 2;
-        enemyStat.damageToColony = .1f;
-        enemyStat.enemyCashValue = 100;
-        enemyStat.speed = speed;
-        return enemyStat;
-    }
-
     private SpawnData createSpawnData()
     {
         SpawnData spawnData = new SpawnData();
@@ -75,17 +63,6 @@ public class CreateWave : MonoBehaviour
         spawnData.numEnemies = numEnemies;
         spawnData.delay = spawnDelay;
         return spawnData;
-    }
-
-    // enemy with extra speed and second prefab
-    private EnemyStats createEnemy2Stat()
-    {
-        EnemyStats enemyStat = new EnemyStats();
-        enemyStat.health = 6;
-        enemyStat.damageToColony = .2f;
-        enemyStat.enemyCashValue = 300;
-        enemyStat.speed = speed * 1.5f;
-        return enemyStat;
     }
 
     private SpawnData createSpawnData2()

@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425038fba8463c94bba291362e011d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToSpawn: {fileID: 1391541153952812289, guid: 89b3924449db94f47b0e97138640c870, type: 3}
+  objToSpawn: {fileID: 1391541153952812289, guid: c588b4ace0d6f6f4abb33e65f88481df, type: 3}
 --- !u!81 &659441582
 AudioListener:
   m_ObjectHideFlags: 0

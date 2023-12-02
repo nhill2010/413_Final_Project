@@ -7,22 +7,28 @@ public class Hero2 : Hero
 {
     public GameObject circularProjectilePrefab;
 
+
     public override int HeroDamage
     {
-        get { return 1; }
+        get { return DefaultStats.HeroDamage2; }
     }
     public override float HeroAttackSpeed
     {
-        get { return 1.5f; }
+        get { return DefaultStats.HeroAttackSpeed2; }
     }
     public override float RangeRadius
     {
-        get { return 5.0f; }
+        get { return DefaultStats.RangeRadius2; }
     }
 
     public float projectileSpeed
     {
-        get { return 2.0f; }
+        get { return DefaultStats.projectileSpeed2; }
+    }
+
+    public override int projectionFrames
+    {
+        get { return DefaultStats.projectionFrames2; }
     }
 
 
