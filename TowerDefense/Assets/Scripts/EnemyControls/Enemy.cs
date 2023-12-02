@@ -6,83 +6,51 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-// class for EnemyStats: 
-// other values can be added here as needed
-public class EnemyStats
-{
-    public float speed;
-    public int health;
-    public float damageToColony; 
-    public float enemyCashValue; // how much money they are worth when destroyed
-    public EnemyStats(EnemyStats statsPar)
-    {
-        speed = statsPar.speed;
-        health = statsPar.health;
-        damageToColony = statsPar.damageToColony;
-        enemyCashValue = statsPar.enemyCashValue;
-    }
-    public EnemyStats() { }
-}
-
 public class Enemy : MonoBehaviour
 {
     public PathIterator pathIter = null;
 
-    // stats for enemy, will be set when created by wave
-    private EnemyStats _stats;
     public GameObject healthBarPrefab; // prefab for healthBar
     private HealthBar healthBar;
-    private int startHealth;
-
-
-    // only used to initialize _stats
-    public EnemyStats stats
-    {
-        // make a copy of the parameter
-        set 
-        { 
-            // require positive health
-            if( value.health <= 0f )
-            {
-                throw new Exception("Attempted to Initialize non-positive Health");
-            }
-            startHealth = value.health;
-            _stats = new EnemyStats(value); 
-        }
-    }
+    private int _health;
 
     public int health
     {
         get
         {
-            return _stats.health;
+            return _health;
         }
         set
         {
-            _stats.health = value;
-            healthBar.value = (float)health / (float)startHealth;
-            if(_stats.health <= 0)
+            _health = value;
+            healthBar.value = (float)_health / (float)defaultHealth;
+            if(_health <= 0)
             {
-                UIManagement.S.UpdateMoney(_stats.enemyCashValue);
+                UIManagement.S.UpdateMoney(enemyCashValue);
                 Destroy(this.gameObject);
             }
         }
     }
 
-    public float damage
+
+    public virtual float enemyCashValue
     {
-        get { return _stats.damageToColony; }
-        set { _stats.damageToColony = value; }
+        get { return 0; }
     }
 
-    public float speed
+    public virtual int defaultHealth
     {
-        get { return _stats.speed; }
-        set 
-        {
-            _stats.speed = value;
-            pathIter.speed = _stats.speed;
-        }
+        get { return 1; }
+    }
+
+    public virtual float damage
+    {
+        get { return 0; }
+    }
+
+    public virtual float speed
+    {
+        get { return 0; }
     }
     
     // Start is called before the first frame update
@@ -93,6 +61,9 @@ public class Enemy : MonoBehaviour
         Vector3 healthBarPos = healthbarGO.transform.position;
         healthBarPos.y = this.transform.position.y + this.transform.localScale.y * 1f;
         healthbarGO.transform.position = healthBarPos;
+
+        // inialize health
+        this.health = defaultHealth;
     }
 
     // Update is called once per frame
@@ -107,7 +78,7 @@ public class Enemy : MonoBehaviour
             if( pathIter.End() )
             {
                 pathIter = null;
-                Colony.colonyHealth -= _stats.damageToColony;
+                Colony.colonyHealth -= damage;
                 Destroy(this.gameObject);
             }
         }

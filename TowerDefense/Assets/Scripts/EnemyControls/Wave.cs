@@ -16,7 +16,6 @@ public class SpawnData
 
 public class WaveSegment
 {
-    public EnemyStats enemyStats;
     public SpawnData spawnData;
 }
 
@@ -37,11 +36,10 @@ public class Wave : MonoBehaviour
         enemyPath = wavePath;
     } 
 
-    public void addEnemiesToWave( EnemyStats enemyStats, SpawnData enemySpawnData )
+    public void addEnemiesToWave( SpawnData enemySpawnData )
     {
         WaveSegment waveSegment = new WaveSegment();
         waveSegment.spawnData = enemySpawnData;
-        waveSegment.enemyStats = enemyStats;
         waveSegments.Add(waveSegment);
     }
 
@@ -73,7 +71,6 @@ public class Wave : MonoBehaviour
         // instantiate a new enemy
         GameObject newEnemy = Instantiate(_running_waveSegmentCurrent.spawnData.enemyPrefab);
         // set enemy on the path
-        newEnemy.GetComponent<Enemy>().stats = _running_waveSegmentCurrent.enemyStats;
         newEnemy.GetComponent<Enemy>().SetOnPath(enemyPath);
         newEnemy.transform.localScale = Vector3.one * _running_waveSegmentCurrent.spawnData.enemyDiameter;
 

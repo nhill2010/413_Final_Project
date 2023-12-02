@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7383651579397159921}
   - component: {fileID: 27303042483284780}
   - component: {fileID: 3301536920836258734}
-  - component: {fileID: 2881708158924654511}
   - component: {fileID: 7207171128343822425}
+  - component: {fileID: 2029880021117878988}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -107,19 +107,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2881708158924654511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726726633328918172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4424952161e8fbf43b2124dfaa97a970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBarPrefab: {fileID: 7206449404499547611, guid: 8ed479c1aacb5734f9b43de42f2e3d47, type: 3}
 --- !u!54 &7207171128343822425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &2029880021117878988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726726633328918172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90d708293b20da4e8752c8df126c3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarPrefab: {fileID: 7206449404499547611, guid: 8ed479c1aacb5734f9b43de42f2e3d47, type: 3}

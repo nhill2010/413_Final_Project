@@ -13,7 +13,6 @@ public class _Scene_1_Waves : MonoBehaviour
     public static float HEIGHT_BOUND = 6.5f;
     public static float WIDTH_BOUND = 14f;
     private float spawnDelay = 1.0f;
-    float speed = .1f;
     int numEnemies = 10;
     private static float PATH_WIDTH = HEIGHT_BOUND / 3.0f;
     private static float PATH_BORDER_WIDTH = PATH_WIDTH / 10.0f;
@@ -110,8 +109,8 @@ public class _Scene_1_Waves : MonoBehaviour
         wave.SetPath(path);
 
         // add enemies to the wave
-        wave.addEnemiesToWave(createEnemyStat(), createSpawnData());
-        wave.addEnemiesToWave(createEnemy2Stat(), createSpawnData2());
+        wave.addEnemiesToWave(createSpawnData());
+        wave.addEnemiesToWave(createSpawnData2());
 
         wave.run();
     }
@@ -139,17 +138,6 @@ public class _Scene_1_Waves : MonoBehaviour
         return coors;
     }
 
-    // enemy with standard speed and first prefab
-    private EnemyStats createEnemyStat()
-    {
-        EnemyStats enemyStat = new EnemyStats();
-        enemyStat.health = 2;
-        enemyStat.damageToColony = .1f;
-        enemyStat.enemyCashValue = 100;
-        enemyStat.speed = speed;
-        return enemyStat;
-    }
-
     private SpawnData createSpawnData()
     {
         SpawnData spawnData = new SpawnData();
@@ -158,17 +146,6 @@ public class _Scene_1_Waves : MonoBehaviour
         spawnData.numEnemies = numEnemies;
         spawnData.delay = spawnDelay;
         return spawnData;
-    }
-
-    // enemy with extra speed and second prefab
-    private EnemyStats createEnemy2Stat()
-    {
-        EnemyStats enemyStat = new EnemyStats();
-        enemyStat.health = 6;
-        enemyStat.damageToColony = .2f;
-        enemyStat.enemyCashValue = 300;
-        enemyStat.speed = speed * 1.5f;
-        return enemyStat;
     }
 
     private SpawnData createSpawnData2()

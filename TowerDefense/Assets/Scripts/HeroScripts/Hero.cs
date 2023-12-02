@@ -10,15 +10,15 @@ public class Hero : EnemyInRange
     // default damage/speed: override with children
     public virtual int HeroDamage
     {
-        get { return 1; }
+        get { return 0; }
     }
     public virtual float HeroAttackSpeed
     {
-        get { return 2.0f; }
+        get { return 1f; }
     }
     public virtual float RangeRadius
     {
-        get { return 5.0f; }
+        get { return 0f; }
     }
 
     public virtual int projectionFrames

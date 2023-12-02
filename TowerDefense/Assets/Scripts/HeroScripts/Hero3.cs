@@ -8,24 +8,25 @@ public class Hero3 : Hero
 
     public override int HeroDamage
     {
-        get { return 4; }
+        get { return DefaultStats.HeroDamage3; }
     }
     public override float HeroAttackSpeed
     {
-        get { return .75f; }
+        get { return DefaultStats.HeroAttackSpeed3; }
     }
     public override float RangeRadius
     {
-        get { return 7.0f; }
+        get { return DefaultStats.RangeRadius3; }
     }
+
     public float projectileSpeed
     {
-        get { return 100f; }
+        get { return DefaultStats.projectileSpeed3; }
     }
 
     public override int projectionFrames
     {
-        get { return 1; }
+        get { return DefaultStats.projectionFrames3; }
     }
 
 
