@@ -32,6 +32,7 @@ public class UIManagement : MonoBehaviour
     public float healthLvl;
     public int waveCurrent = 4;
     public EnemyStats enemyStats;
+
     void Start()
     {
         S = this;
@@ -118,7 +119,6 @@ public class UIManagement : MonoBehaviour
 
     void HeroSelect()
     {
-        Debug.Log( "BUTTON PRESSED" );
-        SceneManager.LoadScene( "HeroSelectScene" );
+        SceneManager.LoadScene( "HeroSelectScreen" );
     }
 }
