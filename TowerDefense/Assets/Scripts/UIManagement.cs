@@ -31,7 +31,7 @@ public class UIManagement : MonoBehaviour
     public Slider colonyHealthBar;
     public float healthLvl;
     public int waveCurrent = 4;
-    public EnemyStats enemyStats;
+
 
     void Start()
     {
