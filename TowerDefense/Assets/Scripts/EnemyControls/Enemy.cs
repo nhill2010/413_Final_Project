@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour
         set
         {
             _stats.health = value;
-            //healthBar.value = (float)health / (float)startHealth;
+            healthBar.value = (float)health / (float)startHealth;
             if(_stats.health <= 0)
             {
                 UIManagement.S.UpdateMoney(_stats.enemyCashValue);
@@ -87,11 +88,11 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject healthbarGO = Instantiate<GameObject>(healthBarPrefab,this.gameObject.transform);
-        //healthBar = healthbarGO.GetComponent<HealthBar>();
-        //Vector3 healthBarPos = healthbarGO.transform.position;
-        //healthBarPos.y = this.transform.localScale.y * 1f;
-        //healthbarGO.transform.position = healthBarPos;
+        GameObject healthbarGO = Instantiate<GameObject>(healthBarPrefab,this.gameObject.transform);
+        healthBar = healthbarGO.GetComponent<HealthBar>();
+        Vector3 healthBarPos = healthbarGO.transform.position;
+        healthBarPos.y = this.transform.position.y + this.transform.localScale.y * 1f;
+        healthbarGO.transform.position = healthBarPos;
     }
 
     // Update is called once per frame

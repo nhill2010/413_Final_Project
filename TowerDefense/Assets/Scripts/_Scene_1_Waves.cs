@@ -12,7 +12,6 @@ public class _Scene_1_Waves : MonoBehaviour
     public GameObject pathPrefab;
     public static float HEIGHT_BOUND = 6.5f;
     public static float WIDTH_BOUND = 14f;
-    private float waveDelay = 3f;
     private float spawnDelay = 1.0f;
     float speed = .1f;
     int numEnemies = 10;
