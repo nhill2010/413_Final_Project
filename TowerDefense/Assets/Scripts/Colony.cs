@@ -26,7 +26,6 @@ public class Colony : MonoBehaviour
 
     private void OnTriggerEnter( Collider collider )
     {
-        Debug.Log( collider.gameObject.name );
         Enemy enemy = collider.gameObject.GetComponent<Enemy>();
 
         if( enemy != null )
