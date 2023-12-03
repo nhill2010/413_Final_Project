@@ -36,8 +36,8 @@ public class DefaultStats : MonoBehaviour
     public static int HeroDamage3 = 4;
     public static float HeroAttackSpeed3 = .75f;
     public static float RangeRadius3 = 7.0f;
-    public static float projectileSpeed3 = 100f;
-    public static int projectionFrames3 = 1;
+    public static float projectileSpeed3 = 75f;
+    public static int projectionFrames3 = 4;
 
     ///////////////////////////// projectile //////////////////////////////////
 }

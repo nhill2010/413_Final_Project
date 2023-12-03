@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _Scene_1_Waves : MonoBehaviour
+public class _Scene_2Waves : MonoBehaviour
 {
 
     [Header("Inscribed")]
@@ -12,96 +12,47 @@ public class _Scene_1_Waves : MonoBehaviour
     public GameObject pathPrefab;
     public static float HEIGHT_BOUND = 6.5f;
     public static float WIDTH_BOUND = 14f;
-    private float spawnDelay = 1.0f;
+    private float spawnDelay = .5f;
     int numEnemies = 10;
     private static float PATH_WIDTH = HEIGHT_BOUND / 3.0f;
     private static float PATH_BORDER_WIDTH = PATH_WIDTH / 10.0f;
     private static float ENEMY_DIAMETER = PATH_WIDTH * 0.4f;
 
     private Path path1;
-    private Path path2;
 
 
     // Start is called before the first frame update
     private void Start()
     {
         path1 = createPath1();
-        path2 = createPath2();
     }
 
     public void RunEnemies()
     {
         createAndRunWave(path1);
-        createAndRunWave(path2);
     }
 
 
     private Path createPath1()
     {
-        Vector3 circleCenter = Vector3.zero;
-        float circleRadius = HEIGHT_BOUND * .5f;
-
         // create coordinates for enemies to follow
         List<Vector3> pathCoors = new List<Vector3>();
-
-        pathCoors.Add(new Vector3(-WIDTH_BOUND * 1.5f, -HEIGHT_BOUND, 0));
-
-        circleCenter.x = WIDTH_BOUND - circleRadius;
-        circleCenter.y = -HEIGHT_BOUND + circleRadius;
-        pathCoors.AddRange(GenerateCircleCoors(circleRadius, -circleRadius, 
-                                               circleCenter, 0f, 1.25f));
-
-        pathCoors.Add(new Vector3(WIDTH_BOUND, HEIGHT_BOUND, 0));
-
-        circleCenter.x = -WIDTH_BOUND + circleRadius;
-        circleCenter.y = HEIGHT_BOUND - circleRadius;
-        pathCoors.AddRange(GenerateCircleCoors(-circleRadius, circleRadius, 
-                                               circleCenter, 0f, 1.625f));
-
-        pathCoors.Add(Vector3.zero);
+        pathCoors.Add(new Vector3(HEIGHT_BOUND * 1.5f, 0, 0)); // start at right
+        pathCoors.AddRange(GenerateCircleCoors(WIDTH_BOUND, HEIGHT_BOUND, Vector3.zero, .25f, 1.125f));
+        pathCoors.AddRange(GenerateCircleCoors(-WIDTH_BOUND/2, HEIGHT_BOUND/2, Vector3.zero, -.125f, 0.5f));
+        pathCoors.Add(Vector3.zero); // end at middle
+        //pathCoors.Reverse(); // reverse coordinates
 
         // create a path from the coordinates
         GameObject pathGO = Instantiate(pathPrefab);
-        Path pathObj = pathGO.GetComponent<Path>();
-        pathObj.Initialize(pathCoors, PATH_WIDTH, PATH_BORDER_WIDTH);
+        Path myPath = pathGO.GetComponent<Path>();
+        myPath.Initialize(pathCoors, PATH_WIDTH, PATH_BORDER_WIDTH);
 
-        return pathObj;
-    }
-
-    private Path createPath2()
-    {
-        Vector3 circleCenter = Vector3.zero;
-        float circleRadius = HEIGHT_BOUND * .5f;
-
-        // create coordinates for enemies to follow
-        List<Vector3> pathCoors = new List<Vector3>();
-
-        pathCoors.Add(new Vector3(WIDTH_BOUND * 1.5f, HEIGHT_BOUND, 0));
-
-        circleCenter.x = -WIDTH_BOUND + circleRadius;
-        circleCenter.y = HEIGHT_BOUND - circleRadius;
-        pathCoors.AddRange(GenerateCircleCoors(-circleRadius, circleRadius,
-                                               circleCenter, 0f, 1.25f));
-
-        pathCoors.Add(new Vector3(-WIDTH_BOUND, -HEIGHT_BOUND, 0));
-
-        circleCenter.x = WIDTH_BOUND - circleRadius;
-        circleCenter.y = -HEIGHT_BOUND + circleRadius;
-        pathCoors.AddRange(GenerateCircleCoors(circleRadius, -circleRadius,
-                                               circleCenter, 0f, 1.625f));
-
-        pathCoors.Add(Vector3.zero);
-
-        // create a path from the coordinates
-        GameObject pathGO = Instantiate(pathPrefab);
-        Path pathObj = pathGO.GetComponent<Path>();
-        pathObj.Initialize(pathCoors, PATH_WIDTH, PATH_BORDER_WIDTH);
-
-        return pathObj;
+        return myPath;
     }
 
 
-    private void createAndRunWave( Path path )
+    private void createAndRunWave(Path path)
     {
         // create a wave
         Wave wave = null;
