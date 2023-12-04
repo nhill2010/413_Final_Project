@@ -11,17 +11,25 @@ public class CreateWave : MonoBehaviour
     public GameObject pathPrefab;
     public static float HEIGHT_BOUND = 8f;
     public static float WIDTH_BOUND = 18f;
-    private float waveDelay = 3f;
     private float spawnDelay = .4f;
     int numEnemies = 15;
-    Wave wave = null;
     private static float PATH_WIDTH = HEIGHT_BOUND / 3.0f;
     private static float PATH_BORDER_WIDTH = PATH_WIDTH / 10.0f;
     private static float ENEMY_DIAMETER = PATH_WIDTH * 0.4f;
 
+    private Path path1;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
+    {
+        path1 = createPath1();
+    }
+
+    public void RunEnemies()
+    {
+        createAndRunWave(path1);
+    }
+
+    private Path createPath1()
     {
         // create coordinates for enemies to follow
         List<Vector3> pathCoors = new List<Vector3>();
@@ -33,26 +41,24 @@ public class CreateWave : MonoBehaviour
         // create a path from the coordinates
         GameObject pathGO = Instantiate(pathPrefab);
         Path myPath = pathGO.GetComponent<Path>();
-        myPath.Initialize(pathCoors, PATH_WIDTH, PATH_BORDER_WIDTH );
+        myPath.Initialize(pathCoors, PATH_WIDTH, PATH_BORDER_WIDTH);
 
+        return myPath;
+    }
+
+
+    private void createAndRunWave(Path path)
+    {
         // create a wave
+        Wave wave = null;
         wave = Instantiate(wavePrefab).GetComponent<Wave>();
-        wave.SetPath(myPath);
+        wave.SetPath(path);
 
         // add enemies to the wave
         wave.addEnemiesToWave(createSpawnData());
         wave.addEnemiesToWave(createSpawnData2());
 
-        // run the wave once
-        Invoke("RunWave", waveDelay);
-    }
-
-    void RunWave()
-    {
-        if (wave != null)
-        {
-            wave.run();
-        }
+        wave.run();
     }
 
     private SpawnData createSpawnData()
