@@ -30,7 +30,7 @@ public class UIManagement : MonoBehaviour
     public GameObject healthBarPrefab;
     public Slider colonyHealthBar;
     public float healthLvl;
-    public int waveCurrent = 4;
+    public int waveCurrent = 1;
 
     void Start()
     {
