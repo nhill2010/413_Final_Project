@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public virtual float enemyCashValue
+    public virtual int enemyCashValue
     {
         get { return 0; }
     }
