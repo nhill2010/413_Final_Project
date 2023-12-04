@@ -19,7 +19,7 @@ public class Enemy2 : Enemy
         get { return DefaultStats.enemyDamageToColony2;  }
     }
 
-    public override float enemyCashValue
+    public override int enemyCashValue
     {
         get { return DefaultStats.enemyCashValue2; }
     }
