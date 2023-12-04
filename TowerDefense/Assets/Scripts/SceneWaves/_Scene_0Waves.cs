@@ -21,12 +21,19 @@ public class CreateWave : MonoBehaviour
 
     private void Start()
     {
+        UIManagement.S.waveCurrent = 0;
         path1 = createPath1();
     }
 
     public void RunEnemies()
     {
-        createAndRunWave(path1);
+        // check wave limit not met
+        if (UIManagement.S.waveCurrent < UIManagement.S.waveTotal)
+        {
+            // increment the wave count, create and run waves
+            UIManagement.S.waveCurrent++;
+            createAndRunWave(path1);
+        }
     }
 
     private Path createPath1()

@@ -968,7 +968,7 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 238133907}
   colonyHealthBar: {fileID: 0}
   healthLvl: 0
-  waveCurrent: 4
+  waveCurrent: 0
 --- !u!1 &404551946
 GameObject:
   m_ObjectHideFlags: 0

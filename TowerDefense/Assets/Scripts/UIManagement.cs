@@ -30,9 +30,9 @@ public class UIManagement : MonoBehaviour
     public GameObject healthBarPrefab;
     public Slider colonyHealthBar;
     public float healthLvl;
-    public int waveCurrent = 1;
+    public int waveCurrent = 0;
 
-    void Start()
+    void Awake()
     {
         S = this;
         colonyHealthBar = healthBarPrefab.gameObject.GetComponent<Slider>();
