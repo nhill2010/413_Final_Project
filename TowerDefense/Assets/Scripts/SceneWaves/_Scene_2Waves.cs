@@ -24,12 +24,19 @@ public class _Scene_2Waves : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        UIManagement.S.waveCurrent = 0;
         path1 = createPath1();
     }
 
     public void RunEnemies()
     {
-        createAndRunWave(path1);
+        // check wave limit not met
+        if (UIManagement.S.waveCurrent < UIManagement.S.waveTotal)
+        {
+            // increment the wave count, create and run waves
+            UIManagement.S.waveCurrent++;
+            createAndRunWave(path1);
+        }
     }
 
 
