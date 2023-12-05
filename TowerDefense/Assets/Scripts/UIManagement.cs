@@ -118,6 +118,7 @@ public class UIManagement : MonoBehaviour
     public void OnWavesEnd()
     {
         Debug.Log("Completed Waves");
+        SceneManager.LoadScene("WinScreen");
     }
 
 }
