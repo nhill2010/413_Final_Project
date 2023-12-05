@@ -20,7 +20,18 @@ public class HeroSelectScreen : MonoBehaviour
 
     void Awake()
     {
-        if( PlayerPrefs.HasKey( "Bank" ) ) {
+        /*
+        if(true) // used to reset PlayerPref's values
+        {
+            Debug.Log("Resetting Bank's value. Note: This can be undone in HeroSelectScreen.Awake()");
+            PlayerPrefs.SetInt("Hero1Inventory", 0);
+            PlayerPrefs.SetInt("Hero2Inventory", 0);
+            PlayerPrefs.SetInt("Hero3Inventory", 0);
+            PlayerPrefs.SetInt("Bank", 500);
+        }
+        */
+
+        if ( PlayerPrefs.HasKey( "Bank" ) ) {
             money = PlayerPrefs.GetInt( "Bank" );
         }
         if ( PlayerPrefs.HasKey( "Hero1Inventory" ) ) {
@@ -44,7 +55,7 @@ public class HeroSelectScreen : MonoBehaviour
     void Start()
     {
         // add button listeners
-	    Hero1.onClick.AddListener( delegate{ Purchase( heroType.hero1 ); } );
+        Hero1.onClick.AddListener( delegate{ Purchase( heroType.hero1 ); } );
         Hero2.onClick.AddListener( delegate{ Purchase( heroType.hero2 ); } );
         Hero3.onClick.AddListener( delegate{ Purchase( heroType.hero3 ); } );
 
@@ -66,37 +77,49 @@ public class HeroSelectScreen : MonoBehaviour
     void Purchase( heroType H )
     {
         int price;
+        string HeroInventory; // contains the hero's variable name
+        // get price and HeroInventory from heroType
         switch( H ) {
             case heroType.hero1:
-                h1Amt++;
                 price = h1Price;
+                HeroInventory = "Hero1Inventory";
                 break;
             case heroType.hero2:
-                h2Amt++;
                 price = h2Price;
+                HeroInventory = "Hero2Inventory";
                 break;
             case heroType.hero3:
-                h3Amt++;
                 price = h3Price;
+                HeroInventory = "Hero3Inventory";
                 break; 
             default:
-                price = 0;
-                break;
+                Debug.Log("WARNING: Attempted to purchase invalid heroType");
+                // exit the function
+                return;
         }
 
-        // UIManagement.S.UpdateInventory( h1Amt, h2Amt, h3Amt );
-        PlayerPrefs.SetInt( "Hero1Inventory", h1Amt );
-        PlayerPrefs.SetInt( "Hero2Inventory", h2Amt );
-        PlayerPrefs.SetInt( "Hero3Inventory", h3Amt );
+        // check able to purchase hero
+        if ( PlayerPrefs.GetInt( "Bank" ) >= price )
+        {
+            // update money at 3 differnet locations? 
+            UIManagement.S.UpdateMoney(-price);
+            money -= price;
+            PlayerPrefs.SetInt("Bank",money);
 
-        if ( PlayerPrefs.GetInt( "Bank" ) >= 100 ) { // hardcoded to lowest hero price
-            UIManagement.S.UpdateMoney( -price );
-            money = PlayerPrefs.GetInt( "Bank" );
+            // increment hero inventory
+            PlayerPrefs.SetInt(HeroInventory, PlayerPrefs.GetInt(HeroInventory) + 1);
         }
-        else {
+        // otherwise, unable to purchase hero
+        else
+        {
             // TODO: print error message to screen
-            PlayerPrefs.SetInt( "Bank", 0 );
+            Debug.Log("Not succesful");
         }
+
+        // update hAmts
+        h1Amt = PlayerPrefs.GetInt("Hero1Inventory");
+        h2Amt = PlayerPrefs.GetInt("Hero2Inventory");
+        h3Amt = PlayerPrefs.GetInt("Hero3Inventory");
     }
 
     public void DeletePlayerData()
