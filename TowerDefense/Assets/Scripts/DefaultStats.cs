@@ -12,10 +12,23 @@ public class DefaultStats : MonoBehaviour
     public static float enemyDamageToColony1 = .1f;
     public static int enemyCashValue1 = 100;
 
+    [HideInInspector]
     public static float enemySpeed2 = .15f;
     public static int enemyHealth2 = 6;
     public static float enemyDamageToColony2 = .2f;
     public static int enemyCashValue2 = 300;
+
+    [HideInInspector]
+    public static float enemySpeed3 = .12f;
+    public static int enemyHealth3 = 10;
+    public static float enemyDamageToColony3 = .25f;
+    public static int enemyCashValue3 = 400;
+
+    [HideInInspector]
+    public static float enemySpeed4 = .07f;
+    public static int enemyHealth4 = 35;
+    public static float enemyDamageToColony4 = .35f;
+    public static int enemyCashValue4 = 500;
 
     ////////////////////////// hero //////////////////////////////////////////
     [HideInInspector]
