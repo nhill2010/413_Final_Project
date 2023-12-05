@@ -9,6 +9,7 @@ public class LinearProjectile : EnemyInRange
     private float RangeRadius;
     private float speed;
     private Vector3 initialPosition;
+    private bool isDestroyed = false;
 
 
     public void Init( Vector3 initialPos, Vector3 direction, 
@@ -47,6 +48,11 @@ public class LinearProjectile : EnemyInRange
 
     public void damageEnemy( Enemy enemy )
     {
+        if( isDestroyed )
+        {
+            Debug.Log("DESTROYED------------------------------------------");
+            return;
+        }
         damage -= enemy.health;
         enemy.health = -damage;
         if( rebound && damage > 0 )
@@ -66,6 +72,7 @@ public class LinearProjectile : EnemyInRange
         }
         else
         {
+            isDestroyed = true;
             Destroy(this.gameObject);
         }
     }
