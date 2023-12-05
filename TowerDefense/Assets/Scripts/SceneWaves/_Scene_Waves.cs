@@ -69,7 +69,7 @@ public class _Scene_Waves : MonoBehaviour
         // wave 1
         {
             wave = createWaveOnPath(path);
-            wave.addEnemiesToWave(createSpawnData(1, 10, .4f));
+            wave.addEnemiesToWave(createSpawnData(1, 5, 2f));
 
             waves.Add(wave);
         }
@@ -77,7 +77,8 @@ public class _Scene_Waves : MonoBehaviour
         // wave 2
         {
             wave = createWaveOnPath(path);
-            wave.addEnemiesToWave(createSpawnData(2, 10, .4f));
+            wave.addEnemiesToWave(createSpawnData(1, 5, 1f));
+            wave.addEnemiesToWave(createSpawnData(2, 5, 2f));
 
             waves.Add(wave);
         }
@@ -85,7 +86,9 @@ public class _Scene_Waves : MonoBehaviour
         // wave 3
         {
             wave = createWaveOnPath(path);
-            wave.addEnemiesToWave(createSpawnData(3, 10, .2f));
+            wave.addEnemiesToWave(createSpawnData(1, 10, .5f));
+            wave.addEnemiesToWave(createSpawnData(2, 10, 1f));
+            wave.addEnemiesToWave(createSpawnData(3, 5, 2f));
 
             waves.Add(wave);
         }
@@ -93,7 +96,10 @@ public class _Scene_Waves : MonoBehaviour
         // wave 4
         {
             wave = createWaveOnPath(path);
-            wave.addEnemiesToWave(createSpawnData(4, 10, .2f));
+            wave.addEnemiesToWave(createSpawnData(1, 20, .25f));
+            wave.addEnemiesToWave(createSpawnData(2, 10, .5f));
+            wave.addEnemiesToWave(createSpawnData(1, 10, .5f));
+            wave.addEnemiesToWave(createSpawnData(3, 10, 2f));
 
             waves.Add(wave);
         }
@@ -101,6 +107,7 @@ public class _Scene_Waves : MonoBehaviour
         // wave 5
         {
             wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(3, 40, 3f));
 
             waves.Add(wave);
         }
@@ -108,6 +115,52 @@ public class _Scene_Waves : MonoBehaviour
         // wave 6
         {
             wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(4, 1, 10f));
+            wave.addEnemiesToWave(createSpawnData(2, 10, 1f));
+
+            waves.Add(wave);
+        }
+
+        // wave 7
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(3, 10, 1f));
+            wave.addEnemiesToWave(createSpawnData(4, 1, 5f));
+            wave.addEnemiesToWave(createSpawnData(3, 10, 1f));
+            wave.addEnemiesToWave(createSpawnData(4, 1, 5f));
+            wave.addEnemiesToWave(createSpawnData(3, 10, 1f));
+            wave.addEnemiesToWave(createSpawnData(4, 1, 5f));
+
+            waves.Add(wave);
+        }
+
+        // wave 8
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(1, 30, .25f));
+            wave.addEnemiesToWave(createSpawnData(2, 10, .5f));
+            wave.addEnemiesToWave(createSpawnData(3, 10, 1f));
+            wave.addEnemiesToWave(createSpawnData(4,10, 2f));
+
+            waves.Add(wave);
+        }
+
+        // wave 9
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(4, 20, 2f));
+
+            waves.Add(wave);
+        }
+
+        // wave 10
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(3, 20, .25f));
+            wave.addEnemiesToWave(createSpawnData(1, 20, .25f));
+            wave.addEnemiesToWave(createSpawnData(3, 20, .25f));
+            wave.addEnemiesToWave(createSpawnData(1, 20, .25f));
+            wave.addEnemiesToWave(createSpawnData(4, 80, .5f));
 
             waves.Add(wave);
         }
