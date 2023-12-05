@@ -17,14 +17,14 @@ namespace LP.ClickToPlace
         private void Start()
         {
             cam = Camera.main;
-            h1Amt = PlayerPrefs.GetInt( "Hero1Inventory" );
-            h2Amt = PlayerPrefs.GetInt( "Hero2Inventory" );
-            h3Amt = PlayerPrefs.GetInt( "Hero3Inventory" );
         }
 
         private void Update()
         {
             SpawnAtMousePos();
+            h1Amt = PlayerPrefs.GetInt( "Hero1Inventory" );
+            h2Amt = PlayerPrefs.GetInt( "Hero2Inventory" );
+            h3Amt = PlayerPrefs.GetInt( "Hero3Inventory" );
         }
 
         public void SetHero( string type )
