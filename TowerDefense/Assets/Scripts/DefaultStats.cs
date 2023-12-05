@@ -33,11 +33,11 @@ public class DefaultStats : MonoBehaviour
     public static int projectionFrames2 = 0;
 
     [HideInInspector]
-    public static int HeroDamage3 = 5;
-    public static float HeroAttackSpeed3 = .45f;
-    public static float RangeRadius3 = 7.0f;
+    public static int HeroDamage3 = 1;
+    public static float HeroAttackSpeed3 = .20f;
+    public static float RangeRadius3 = 6.0f;
     public static float projectileSpeed3 = 85f;
-    public static int projectionFrames3 = 4;
+    public static int projectionFrames3 = 3;
 
     ///////////////////////////// projectile //////////////////////////////////
 }
