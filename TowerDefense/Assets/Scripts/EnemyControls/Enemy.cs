@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         {
             _health = value;
             healthBar.value = (float)_health / (float)defaultHealth;
-            if(_health <= 0)
+            if (_health <= 0)
             {
                 UIManagement.S.UpdateMoney(enemyCashValue);
                 Destroy(this.gameObject);
@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
         Vector3 healthBarPos = healthbarGO.transform.position;
         healthBarPos.y = this.transform.position.y + this.transform.localScale.y * 1f;
         healthbarGO.transform.position = healthBarPos;
-
+        Debug.Log("Initializing Health");
         // inialize health
         this.health = defaultHealth;
     }

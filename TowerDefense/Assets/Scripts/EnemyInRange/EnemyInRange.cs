@@ -71,4 +71,8 @@ public class EnemyInRange : MonoBehaviour
             return closestEnemy;
         }
     }
+    public void OnDestroy()
+    {
+        Destroy(eirCollider.gameObject);
+    }
 }
