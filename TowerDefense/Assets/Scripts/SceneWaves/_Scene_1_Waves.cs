@@ -31,6 +31,15 @@ public class _Scene_1_Waves : MonoBehaviour
         path2 = createPath2();
     }
 
+    private void Update()
+    {
+        if (Enemy.ENEMY_COUNT == 0 && UIManagement.S.waveCurrent >= UIManagement.S.waveTotal && Wave.WAVE_COUNT == 0)
+        {
+            UIManagement.S.OnWavesEnd();
+            Destroy(this);
+        }
+    }
+
     public void RunEnemies()
     {
         // check wave limit not met
