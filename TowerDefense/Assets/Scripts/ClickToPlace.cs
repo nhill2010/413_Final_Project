@@ -1,30 +1,51 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-
 
 namespace LP.ClickToPlace
 {
+
     public class ClickToPlace : MonoBehaviour
     {
-        // will need to create an array of hero objects here 
-        // and select them based on user input
-        // for now, objToSpawn will be Hero1
         [ SerializeField ] GameObject objToSpawn = null;
         private Camera cam = null;
-        // min and max values define a range of the screen where
-        // the hero select button is - this will be a null range
-        private Vector2 voidRangeMins = new Vector2( -18, -10 ); // xmin, ymin
-        private Vector2 voidRangeMaxs = new Vector2( -14, -6 ); // xmax, ymax
+        private int h1Amt, h2Amt, h3Amt, heroAmt;
+        public GameObject h1Obj, h2Obj, h3Obj;
+        private heroType hType;
 
         private void Start()
         {
             cam = Camera.main;
+            h1Amt = PlayerPrefs.GetInt( "Hero1Inventory" );
+            h2Amt = PlayerPrefs.GetInt( "Hero2Inventory" );
+            h3Amt = PlayerPrefs.GetInt( "Hero3Inventory" );
         }
 
         private void Update()
         {
             SpawnAtMousePos();
-            // RemoveAtMousePos();
+        }
+
+        public void SetHero( string type )
+        {
+            switch( type ) {
+                case "hero1":
+                    heroAmt = h1Amt;
+                    objToSpawn = h1Obj;
+                    hType = heroType.hero1;
+                    break;
+                case "hero2":
+                    heroAmt = h2Amt;
+                    objToSpawn = h2Obj;
+                    hType = heroType.hero2;
+                    break;
+                case "hero3":
+                    heroAmt = h3Amt;
+                    objToSpawn = h3Obj;
+                    hType = heroType.hero3;
+                    break;
+            }
         }
 
         // Function SpawnAtMousePos:
@@ -32,6 +53,9 @@ namespace LP.ClickToPlace
         // click at current mouse position
         private void SpawnAtMousePos()
         {
+            // this line prevents player from placing objects under UI elements
+            if ( EventSystem.current.IsPointerOverGameObject()) return;
+
             if ( Mouse.current.leftButton.wasPressedThisFrame )
             {
                 Ray ray = cam.ScreenPointToRay( Mouse.current.position.ReadValue() );
@@ -39,32 +63,17 @@ namespace LP.ClickToPlace
 
                 if ( Physics.Raycast( ray, out hit ) )
                 {
-                    // if click point not in void range
-                    if ( !( hit.point.x > voidRangeMins.x && hit.point.x < voidRangeMaxs.x ) ||
-                         !( hit.point.y > voidRangeMins.y && hit.point.y < voidRangeMaxs.y ) ) {
+                    // set hero's position to z=0, the plane with the enemies
+                    Vector3 heroPos = hit.point;
+                    heroPos.z = 0;
 
-                        // set hero's position to z=0, the plane with the enemies
-                        Vector3 heroPos = hit.point;
-                        heroPos.z = 0;
+                    if ( heroAmt > 0 ) {
                         Instantiate(objToSpawn, heroPos, Quaternion.identity);
+                        UIManagement.S.UpdateInventory( hType, -1 );
+                        heroAmt--;
                     }
                 }
             }
         }
-
-        // brought this in from old project - not sure if we'll need it
-        // private void RemoveAtMousePos()
-        // {
-        //     if ( Mouse.current.rightButton.wasPressedThisFrame )
-        //     {
-        //         Ray ray = cam.ScreenPointToRay( Mouse.current.position.ReadValue() );
-        //         RaycastHit hit;
-
-        //         if ( Physics.Raycast( ray, out hit ) && hit.collider.tag == "Obstacle" )
-        //         {
-        //             Destroy( hit.collider.gameObject );
-        //         }
-        //     }
-        // }
     }
 }

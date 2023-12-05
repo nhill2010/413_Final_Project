@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum heroType { hero1, hero2, hero3 };
+
 public class HeroSelectScreen : MonoBehaviour
 {
 
@@ -42,9 +44,9 @@ public class HeroSelectScreen : MonoBehaviour
     void Start()
     {
         // add button listeners
-	    Hero1.onClick.AddListener( delegate{ Purchase( h1Amt, h1Price ); } );
-        Hero2.onClick.AddListener( delegate{ Purchase( h2Amt, h2Price ); } );
-        Hero3.onClick.AddListener( delegate{ Purchase( h3Amt, h3Price ); } );
+	    Hero1.onClick.AddListener( delegate{ Purchase( heroType.hero1 ); } );
+        Hero2.onClick.AddListener( delegate{ Purchase( heroType.hero2 ); } );
+        Hero3.onClick.AddListener( delegate{ Purchase( heroType.hero3 ); } );
 
         // initialize button text
         h1T.text = "$" + h1Price;
@@ -61,22 +63,38 @@ public class HeroSelectScreen : MonoBehaviour
         moneyText.text = "$" + money;
     }
 
-    void Purchase( int amt, int price )
+    void Purchase( heroType H )
     {
-        // get current number of heros
-        // add 1 to hero count
-        amt++; // not sure if this will work
+        int price;
+        switch( H ) {
+            case heroType.hero1:
+                h1Amt++;
+                price = h1Price;
+                break;
+            case heroType.hero2:
+                h2Amt++;
+                price = h2Price;
+                break;
+            case heroType.hero3:
+                h3Amt++;
+                price = h3Price;
+                break; 
+            default:
+                price = 0;
+                break;
+        }
 
-        // subtract price from total money\
-        // money = PlayerPrefs.GetInt( "Bank" );
-        // money -= price;
-        // PlayerPrefs.SetInt( "Bank", money );
+        // UIManagement.S.UpdateInventory( h1Amt, h2Amt, h3Amt );
+        PlayerPrefs.SetInt( "Hero1Inventory", h1Amt );
+        PlayerPrefs.SetInt( "Hero2Inventory", h2Amt );
+        PlayerPrefs.SetInt( "Hero3Inventory", h3Amt );
+
         if ( PlayerPrefs.GetInt( "Bank" ) >= 100 ) { // hardcoded to lowest hero price
             UIManagement.S.UpdateMoney( -price );
             money = PlayerPrefs.GetInt( "Bank" );
         }
         else {
-            // print error message to screen
+            // TODO: print error message to screen
             PlayerPrefs.SetInt( "Bank", 0 );
         }
     }

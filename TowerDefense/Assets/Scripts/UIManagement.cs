@@ -11,18 +11,21 @@ using UnityEngine.SceneManagement;
 * Select / purchase hero ( button on bottom left screen - opens new scene via scene management )
 */
 
-
 public class UIManagement : MonoBehaviour
 {
     // singleton for UI management
     static public UIManagement S = null;
-
+    
     // these variables are set in Unity
     [ Header( "Set in Inspector" ) ]
-    public Text moneyText;
-    public Text wavesText;
-    public int money;
+    public Text moneyText,
+                wavesText,
+                hero1Inv,
+                hero2Inv,
+                hero3Inv;
+    public int money, h1Amt, h2Amt, h3Amt;
     public int waveTotal = 10;
+    // public PlayerInfo playerInfo;
 
     // these variables are set during runtime
     [ Header( "Set Dynamically" ) ]
@@ -44,7 +47,12 @@ public class UIManagement : MonoBehaviour
         PlayerPrefs.SetInt( "Bank", money );
 
         moneyText.text = string.Format( "${0:#0.0}", money );
-
+        h1Amt = PlayerPrefs.GetInt( "Hero1Inventory" );
+        hero1Inv.text = "" + h1Amt;
+        h2Amt = PlayerPrefs.GetInt( "Hero2Inventory" );
+        hero2Inv.text = "" + h2Amt;
+        h3Amt = PlayerPrefs.GetInt( "Hero3Inventory" );
+        hero3Inv.text = "" + h3Amt;
     }
 
     void Update()
@@ -58,20 +66,37 @@ public class UIManagement : MonoBehaviour
         if( money != PlayerPrefs.GetInt( "Bank" ) ) {
             PlayerPrefs.SetInt( "Bank", money );
         }
+
     }
 
     // called when enemies are destroyed or
     // when heroes are purchased
     public void UpdateMoney(int moneyDifference)
     {
-        // on enemy destroy:
-        // if ( Enemy.enemyDestroyed )
-        // {
-        //float reward = enemyStats.enemyCashValue;
         money += moneyDifference;
         PlayerPrefs.SetInt( "Bank", money );
-        // }
-
+    }
+    
+    public void UpdateInventory( heroType H, int amt )
+    {
+        switch( H )
+        {
+            case heroType.hero1:
+                h1Amt += amt;
+                PlayerPrefs.SetInt( "Hero1Inventory", h1Amt );
+                hero1Inv.text = "" + h1Amt;
+                break;
+            case heroType.hero2:
+                h2Amt += amt;
+                PlayerPrefs.SetInt( "Hero2Inventory", h2Amt );
+                hero2Inv.text = "" + h2Amt;
+                break;
+            case heroType.hero3:
+                h3Amt += amt;
+                PlayerPrefs.SetInt( "Hero3Inventory", h3Amt );
+                hero3Inv.text = "" + h3Amt;
+                break;
+        }
     }
 
     void UpdateHealth()
