@@ -107,7 +107,8 @@ public class _Scene_Waves : MonoBehaviour
         // wave 5
         {
             wave = createWaveOnPath(path);
-            wave.addEnemiesToWave(createSpawnData(3, 40, 3f));
+            wave.addEnemiesToWave(createSpawnData(2, 20, .5f));
+            wave.addEnemiesToWave(createSpawnData(3, 20, 1f));
 
             waves.Add(wave);
         }
