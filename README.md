@@ -3,7 +3,7 @@
 “Some heroes wear space helmets” - Space Cowboy
 
 ### Game Demo: [Perseus: New Frontier](https://nhill2010.github.io/Perseus-New-Frontier/) ###
-
+### Game Walkthrough: [Perseus: New Frontier Game Walkthrough](https://youtu.be/VWxuTU4uWoY) ###
 ### CS413 ###
 
 Group:
