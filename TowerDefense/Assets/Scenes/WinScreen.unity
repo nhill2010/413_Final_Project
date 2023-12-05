@@ -926,7 +926,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: you beat the threat
+  m_Text: THREAT ELIMINATED
 --- !u!222 &2060527852
 CanvasRenderer:
   m_ObjectHideFlags: 0
