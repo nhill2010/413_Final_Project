@@ -98,4 +98,9 @@ public class HeroSelectScreen : MonoBehaviour
             PlayerPrefs.SetInt( "Bank", 0 );
         }
     }
+
+    public void DeletePlayerData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
