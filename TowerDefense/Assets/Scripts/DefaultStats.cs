@@ -10,25 +10,25 @@ public class DefaultStats : MonoBehaviour
     public static float enemySpeed1 = .1f;
     public static int enemyHealth1 = 2;
     public static float enemyDamageToColony1 = .1f;
-    public static int enemyCashValue1 = 100;
+    public static int enemyCashValue1 = 10;
 
     [HideInInspector]
     public static float enemySpeed2 = .15f;
     public static int enemyHealth2 = 6;
     public static float enemyDamageToColony2 = .2f;
-    public static int enemyCashValue2 = 300;
+    public static int enemyCashValue2 = 50;
 
     [HideInInspector]
     public static float enemySpeed3 = .12f;
     public static int enemyHealth3 = 10;
     public static float enemyDamageToColony3 = .25f;
-    public static int enemyCashValue3 = 400;
+    public static int enemyCashValue3 = 100;
 
     [HideInInspector]
     public static float enemySpeed4 = .07f;
     public static int enemyHealth4 = 35;
     public static float enemyDamageToColony4 = .35f;
-    public static int enemyCashValue4 = 500;
+    public static int enemyCashValue4 = 150;
 
     ////////////////////////// hero //////////////////////////////////////////
     [HideInInspector]
@@ -51,6 +51,14 @@ public class DefaultStats : MonoBehaviour
     public static float RangeRadius3 = 6.0f;
     public static float projectileSpeed3 = 85f;
     public static int projectionFrames3 = 3;
+
+    ///////////////////////////// Player //////////////////////////////////
+    
+    [HideInInspector]
+    public static int PlayerStartMoney = 500;
+
+
+
 
     ///////////////////////////// projectile //////////////////////////////////
 }
