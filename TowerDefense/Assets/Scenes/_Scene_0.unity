@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -735,8 +735,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 400667785}
-        m_TargetAssemblyTypeName: CreateWave, Assembly-CSharp
+      - m_Target: {fileID: 400667787}
+        m_TargetAssemblyTypeName: _Scene_Waves, Assembly-CSharp
         m_MethodName: RunEnemies
         m_Mode: 1
         m_Arguments:
@@ -841,8 +841,8 @@ GameObject:
   - component: {fileID: 400667782}
   - component: {fileID: 400667781}
   - component: {fileID: 400667784}
-  - component: {fileID: 400667785}
   - component: {fileID: 400667786}
+  - component: {fileID: 400667787}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -940,22 +940,6 @@ MonoBehaviour:
   h1Obj: {fileID: 1391541153952812289, guid: 89b3924449db94f47b0e97138640c870, type: 3}
   h2Obj: {fileID: 1391541153952812289, guid: e9d65cd3b7eb8424c89dfe4c7ddbc9d1, type: 3}
   h3Obj: {fileID: 1391541153952812289, guid: c588b4ace0d6f6f4abb33e65f88481df, type: 3}
---- !u!114 &400667785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400667780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85103af6ecafadf40911593b3d3e56ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wavePrefab: {fileID: 98943189848181376, guid: 7bace20167efb1d43849dbb271764819, type: 3}
-  enemyPrefab: {fileID: 726726633328918172, guid: 320499274bb2d9745a332b142fe6f970, type: 3}
-  enemyPrefab2: {fileID: 2617143700200901817, guid: 04ef0fb51aad75349bd073ef8c7f41bf, type: 3}
-  pathPrefab: {fileID: 9022901433475185932, guid: c1f1581588879d440abff4828dc44323, type: 3}
 --- !u!114 &400667786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,6 +967,22 @@ MonoBehaviour:
   colonyHealthBar: {fileID: 0}
   healthLvl: 0
   waveCurrent: 0
+--- !u!114 &400667787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400667780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85103af6ecafadf40911593b3d3e56ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavePrefab: {fileID: 98943189848181376, guid: 7bace20167efb1d43849dbb271764819, type: 3}
+  enemyPrefab: {fileID: 726726633328918172, guid: 320499274bb2d9745a332b142fe6f970, type: 3}
+  enemyPrefab2: {fileID: 2617143700200901817, guid: 04ef0fb51aad75349bd073ef8c7f41bf, type: 3}
+  pathPrefab: {fileID: 9022901433475185932, guid: c1f1581588879d440abff4828dc44323, type: 3}
 --- !u!1 &404551946
 GameObject:
   m_ObjectHideFlags: 0
