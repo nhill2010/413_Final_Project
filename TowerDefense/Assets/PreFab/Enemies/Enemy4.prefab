@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4628834876534609718}
   - component: {fileID: 3365819522405792046}
   - component: {fileID: -5439991989861383760}
-  - component: {fileID: 2867196208585110466}
+  - component: {fileID: 3036329134746449625}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: Enemy
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &2867196208585110466
+--- !u!114 &3036329134746449625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2617143700200901817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77af13d12a431e14a9d7120252fcc0f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 30efbd55b15f20309b24326d8b67dd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 7206449404499547611, guid: 8ed479c1aacb5734f9b43de42f2e3d47, type: 3}
