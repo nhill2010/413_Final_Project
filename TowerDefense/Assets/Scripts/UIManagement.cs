@@ -90,4 +90,9 @@ public class UIManagement : MonoBehaviour
         colonyHealthBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = color;
     }
 
+    public void OnWavesEnd()
+    {
+        Debug.Log("Completed Waves");
+    }
+
 }

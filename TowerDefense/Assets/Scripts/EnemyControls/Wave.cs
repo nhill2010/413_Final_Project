@@ -29,6 +29,7 @@ public class Wave : MonoBehaviour
 {
     List<WaveSegment> waveSegments;
     Path enemyPath;
+    public static int WAVE_COUNT = 0;
 
     public void SetPath( Path wavePath )
     {
@@ -45,6 +46,7 @@ public class Wave : MonoBehaviour
 
     public void run()
     {
+        WAVE_COUNT++;
         _running_waveSegmentIndex = -1;
         _running_remainingEnemies = 0;
         recursiveGenerateEnemy();
@@ -62,6 +64,7 @@ public class Wave : MonoBehaviour
             _running_waveSegmentIndex++;
             if (_running_waveSegmentIndex >= waveSegments.Count)
             {
+                WAVE_COUNT--;
                 return;
             }
             _running_waveSegmentCurrent = waveSegments[_running_waveSegmentIndex];
