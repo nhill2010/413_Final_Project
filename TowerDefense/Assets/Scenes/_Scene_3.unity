@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -601,6 +601,8 @@ MonoBehaviour:
   wavePrefab: {fileID: 98943189848181376, guid: 7bace20167efb1d43849dbb271764819, type: 3}
   enemyPrefab: {fileID: 726726633328918172, guid: 320499274bb2d9745a332b142fe6f970, type: 3}
   enemyPrefab2: {fileID: 2617143700200901817, guid: 04ef0fb51aad75349bd073ef8c7f41bf, type: 3}
+  enemyPrefab3: {fileID: 2617143700200901817, guid: 5a946b05cd477454db759e8ca2a04997, type: 3}
+  enemyPrefab4: {fileID: 2617143700200901817, guid: 69911d2830ee4f6408dfafe662efbf0d, type: 3}
   pathPrefab: {fileID: 9022901433475185932, guid: c1f1581588879d440abff4828dc44323, type: 3}
 --- !u!1 &660124571
 GameObject:

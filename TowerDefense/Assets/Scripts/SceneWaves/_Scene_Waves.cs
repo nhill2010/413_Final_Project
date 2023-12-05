@@ -16,11 +16,14 @@ public class _Scene_Waves : MonoBehaviour
     public GameObject wavePrefab;
     public GameObject enemyPrefab;
     public GameObject enemyPrefab2;
+    public GameObject enemyPrefab3;
+    public GameObject enemyPrefab4;
     public GameObject pathPrefab;
+    
 
     // size values
-    public static float HEIGHT_BOUND = 8f;
-    public static float WIDTH_BOUND = 18f;
+    public static float HEIGHT_BOUND = 6.5f;
+    public static float WIDTH_BOUND = 14f;
     public static float PATH_WIDTH = HEIGHT_BOUND / 3.0f;
     public static float PATH_BORDER_WIDTH = PATH_WIDTH / 10.0f;
     public static float ENEMY_DIAMETER = PATH_WIDTH * 0.4f;
@@ -90,7 +93,7 @@ public class _Scene_Waves : MonoBehaviour
         // wave 4
         {
             wave = createWaveOnPath(path);
-            wave.addEnemiesToWave(createSpawnData(3, 10, .2f));
+            wave.addEnemiesToWave(createSpawnData(4, 10, .2f));
 
             waves.Add(wave);
         }
@@ -145,11 +148,11 @@ public class _Scene_Waves : MonoBehaviour
         }
         else if (enemyID == 3)
         {
-            prefab = enemyPrefab2;
+            prefab = enemyPrefab3;
         }
         else
         {
-            prefab = enemyPrefab2;
+            prefab = enemyPrefab4;
         }
 
         SpawnData spawnData = new SpawnData();
