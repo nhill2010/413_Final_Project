@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // note: prefabs are not assigned, adding get/set might work
@@ -9,26 +10,36 @@ public class DefaultStats : MonoBehaviour
     [HideInInspector]
     public static float enemySpeed1 = .1f;
     public static int enemyHealth1 = 2;
-    public static float enemyDamageToColony1 = .1f;
+    public static float enemyDamageToColony1 = .1001f;
     public static int enemyCashValue1 = 10;
 
     [HideInInspector]
     public static float enemySpeed2 = .15f;
     public static int enemyHealth2 = 6;
-    public static float enemyDamageToColony2 = .2f;
+    public static float enemyDamageToColony2 = .2001f;
     public static int enemyCashValue2 = 50;
 
     [HideInInspector]
     public static float enemySpeed3 = .12f;
     public static int enemyHealth3 = 10;
-    public static float enemyDamageToColony3 = .25f;
+    public static float enemyDamageToColony3 = .2501f;
     public static int enemyCashValue3 = 100;
 
     [HideInInspector]
     public static float enemySpeed4 = .07f;
     public static int enemyHealth4 = 35;
-    public static float enemyDamageToColony4 = .35f;
+    public static float enemyDamageToColony4 = .3501f;
     public static int enemyCashValue4 = 150;
+
+    [HideInInspector]
+    public static float enemySpeed5 = .035f;
+    public static int enemyHealth5 = 10;
+    public static float enemyDamageToColony5 = .05f;
+    public static int enemyCashValue5 = 0;
+    public static float EnemyAttackSpeed5 = .5f;
+    public static float IndestructibleDuration = 1f;
+    public static float EnemyProjectileSpeed5 = .5f;
+    public static float EnemyRangeRadius5 = 20f;
 
     ////////////////////////// hero //////////////////////////////////////////
     [HideInInspector]

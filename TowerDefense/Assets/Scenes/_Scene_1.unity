@@ -617,6 +617,7 @@ MonoBehaviour:
   enemyPrefab2: {fileID: 2617143700200901817, guid: 04ef0fb51aad75349bd073ef8c7f41bf, type: 3}
   enemyPrefab3: {fileID: 2617143700200901817, guid: 5a946b05cd477454db759e8ca2a04997, type: 3}
   enemyPrefab4: {fileID: 2617143700200901817, guid: 69911d2830ee4f6408dfafe662efbf0d, type: 3}
+  enemyPrefab42: {fileID: 2617143700200901817, guid: eaddbcc3db363c94e848f6511b01308b, type: 3}
   pathPrefab: {fileID: 9022901433475185932, guid: c1f1581588879d440abff4828dc44323, type: 3}
 --- !u!114 &740921005 stripped
 MonoBehaviour:

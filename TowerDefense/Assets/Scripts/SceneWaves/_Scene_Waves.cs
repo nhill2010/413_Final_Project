@@ -18,6 +18,7 @@ public class _Scene_Waves : MonoBehaviour
     public GameObject enemyPrefab2;
     public GameObject enemyPrefab3;
     public GameObject enemyPrefab4;
+    public GameObject enemyPrefab42;
     public GameObject pathPrefab;
     
 
@@ -30,12 +31,13 @@ public class _Scene_Waves : MonoBehaviour
 
     private List<Path> _paths = new List<Path>();
     private List<List<Wave>> _waves = new List<List<Wave>>();
+    private int startWave = 1;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        UIManagement.S.waveCurrent = 0;
+        UIManagement.S.waveCurrent = startWave - 1;
         _paths = InitializePaths();
         _waves = new List<List<Wave>>();
         foreach (Path path in _paths)
@@ -47,6 +49,16 @@ public class _Scene_Waves : MonoBehaviour
 
     private void Update()
     {
+        // Error where OnWavesEnd() is not called at end
+        //     Results: unable to reproduce so far
+        /*
+        Debug.Log("----------------------");
+        Debug.Log(Enemy.ENEMY_COUNT); // expect 0
+        Debug.Log(UIManagement.S.waveCurrent); // expect 10
+        Debug.Log(UIManagement.S.waveTotal); // expect 10
+        Debug.Log(Wave.WAVE_COUNT); // expect 0
+        */
+
         if (Enemy.ENEMY_COUNT == 0 && UIManagement.S.waveCurrent >= UIManagement.S.waveTotal && Wave.WAVE_COUNT == 0)
         {
             UIManagement.S.OnWavesEnd();
@@ -65,7 +77,7 @@ public class _Scene_Waves : MonoBehaviour
     {
         List<Wave> waves = new List<Wave>();
         Wave wave;
-
+        
         // wave 1
         {
             wave = createWaveOnPath(path);
@@ -73,7 +85,7 @@ public class _Scene_Waves : MonoBehaviour
 
             waves.Add(wave);
         }
-
+        
         // wave 2
         {
             wave = createWaveOnPath(path);
@@ -161,8 +173,65 @@ public class _Scene_Waves : MonoBehaviour
             wave.addEnemiesToWave(createSpawnData(1, 20, .25f));
             wave.addEnemiesToWave(createSpawnData(3, 20, .25f));
             wave.addEnemiesToWave(createSpawnData(1, 20, .25f));
-            wave.addEnemiesToWave(createSpawnData(4, 80, .5f));
+            wave.addEnemiesToWave(createSpawnData(4, 40, .3f));
 
+            waves.Add(wave);
+        }
+        
+        // wave 11
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(1, 5, 1f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 5f));
+            wave.addEnemiesToWave(createSpawnData(1, 15, 1f));
+
+            waves.Add(wave);
+        }
+        
+        // wave 12
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(3, 5, .5f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 10f));
+            wave.addEnemiesToWave(createSpawnData(3, 6, 2.5f));
+
+            waves.Add(wave);
+        }
+
+        // wave 13
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(4, 5, 1f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 10f));
+            wave.addEnemiesToWave(createSpawnData(4, 5, 1f));
+            wave.addEnemiesToWave(createSpawnData(4, 1, 10f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 10f));
+
+            waves.Add(wave);
+        }
+
+        // wave 14
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(1, 100, .05f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 0f));
+            wave.addEnemiesToWave(createSpawnData(4, 5, 2f));
+            wave.addEnemiesToWave(createSpawnData(4, 1, 30f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 0f));
+            wave.addEnemiesToWave(createSpawnData(4, 5, 2f));
+
+            waves.Add(wave);
+        }
+
+        // wave 15
+        {
+            wave = createWaveOnPath(path);
+            wave.addEnemiesToWave(createSpawnData(2, 50, .1f));
+            wave.addEnemiesToWave(createSpawnData(4, 10, .5f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 5f));
+            wave.addEnemiesToWave(createSpawnData(4, 10, .5f));
+            wave.addEnemiesToWave(createSpawnData(5, 1, 10f));
+            wave.addEnemiesToWave(createSpawnData(4, 100, .05f));
             waves.Add(wave);
         }
 
@@ -203,6 +272,10 @@ public class _Scene_Waves : MonoBehaviour
         else if (enemyID == 3)
         {
             prefab = enemyPrefab3;
+        }
+        else if (enemyID == 5)
+        {
+            prefab = enemyPrefab42;
         }
         else
         {

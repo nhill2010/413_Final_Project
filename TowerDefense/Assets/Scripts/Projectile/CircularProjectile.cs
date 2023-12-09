@@ -9,16 +9,21 @@ public class CircularProjectile : EnemyInRange
     private float RangeRadius;
     private float speed;
     private Vector3 initialPosition;
+    private bool friendlyFire;
+    private Hero source;
 
 
     public void Init(Vector3 initialPos, float speed, 
-                      int damage, float RangeRadius)
+                      int damage, float RangeRadius, bool friendlyFire, 
+                      Hero source)
     {
         this.RangeRadius = RangeRadius;
         this.initialPosition = initialPos;
         this.transform.position = initialPos;
         this.damage = damage;
         this.speed = speed;
+        this.friendlyFire = friendlyFire;
+        this.source = source;
         eirCollider.Init(GetComponent<EnemyInRange>(), RangeRadius);
     }
 
@@ -28,6 +33,11 @@ public class CircularProjectile : EnemyInRange
         if (enemy != null)
         {
             damageEnemy(enemy);
+        }
+        Hero hero = other.GetComponentInParent<Hero>();
+        if( hero != null )
+        {
+            damageHero(hero);
         }
     }
 
@@ -49,5 +59,11 @@ public class CircularProjectile : EnemyInRange
     public void damageEnemy(Enemy enemy)
     {
         enemy.health -= damage;
+    }
+    public void damageHero(Hero hero)
+    {
+        if (ReferenceEquals(hero, source)) return;
+        if (!friendlyFire) return;
+        hero.health -= damage;
     }
 }

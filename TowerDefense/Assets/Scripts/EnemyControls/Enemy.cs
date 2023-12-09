@@ -10,12 +10,12 @@ public class Enemy : MonoBehaviour
 {
     public PathIterator pathIter = null;
 
-    public GameObject healthBarPrefab; // prefab for healthBar
-    private HealthBar healthBar;
-    private int _health;
+    public GameObject healthBarPrefab; // prefab for private HealthBar healthBar;
+    private int _health = 0;
     public static int ENEMY_COUNT = 0;
+    private HealthBar healthBar = null;
 
-    public int health
+    public virtual int health
     {
         get
         {
@@ -53,9 +53,9 @@ public class Enemy : MonoBehaviour
     {
         get { return 0; }
     }
-    
+
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         ENEMY_COUNT++;
         GameObject healthbarGO = Instantiate<GameObject>(healthBarPrefab,this.gameObject.transform);
@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
         Vector3 healthBarPos = healthbarGO.transform.position;
         healthBarPos.y = this.transform.position.y + this.transform.localScale.y * 1f;
         healthbarGO.transform.position = healthBarPos;
-        Debug.Log("Initializing Health");
+
         // inialize health
         this.health = defaultHealth;
     }
