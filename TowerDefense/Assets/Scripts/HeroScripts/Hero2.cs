@@ -40,6 +40,6 @@ public class Hero2 : Hero
 
         // initialize the projectile in the direction of the nearest enemy
         projectile.Init(this.transform.position,
-                        projectileSpeed, HeroDamage, RangeRadius);
+                        projectileSpeed, HeroDamage, RangeRadius,friendlyFire, this);
     }
 }

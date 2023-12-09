@@ -10,11 +10,14 @@ public class LinearProjectile : EnemyInRange
     private float speed;
     private Vector3 initialPosition;
     private bool isDestroyed = false;
+    private bool friendlyFire;
+    private Hero source;
 
 
     public void Init( Vector3 initialPos, Vector3 direction, 
                       float speed, int initialDamage, 
-                      bool reboundPar, float RangeRadius)
+                      bool reboundPar, float RangeRadius, bool friendlyFire, 
+                      Hero source )
     {
         this.RangeRadius = RangeRadius;
         this.initialPosition = initialPos;
@@ -22,6 +25,8 @@ public class LinearProjectile : EnemyInRange
         this.damage = initialDamage;
         this.rebound = reboundPar;
         this.speed = speed;
+        this.friendlyFire = friendlyFire;
+        this.source = source;
         Vector3 vel = direction.normalized;
         vel *= speed;
         this.GetComponent<Rigidbody>().velocity = vel;
@@ -35,6 +40,11 @@ public class LinearProjectile : EnemyInRange
         if( enemy != null )
         {
             damageEnemy( enemy );
+        }
+        Hero hero = other.GetComponentInParent<Hero>();
+        if (hero != null)
+        {
+            damageHero(hero);
         }
     }
 
@@ -50,7 +60,6 @@ public class LinearProjectile : EnemyInRange
     {
         if( isDestroyed )
         {
-            Debug.Log("DESTROYED------------------------------------------");
             return;
         }
         damage -= enemy.health;
@@ -67,7 +76,8 @@ public class LinearProjectile : EnemyInRange
 
                 Init(this.transform.position,
                       this.nearestEnemy.transform.position - this.transform.position,
-                      this.speed, this.damage, this.rebound, this.RangeRadius);
+                      this.speed, this.damage, this.rebound, this.RangeRadius, 
+                      this.friendlyFire, this.source);
             }
         }
         else
@@ -89,5 +99,12 @@ public class LinearProjectile : EnemyInRange
         rotation.z = angle - Mathf.PI / 2;
         rotation.z *= Mathf.Rad2Deg;
         this.transform.eulerAngles = rotation;
+    }
+
+    public void damageHero(Hero hero)
+    {
+        if (ReferenceEquals(hero, source)) return;
+        if (!friendlyFire) return;
+        hero.health -= damage;
     }
 }

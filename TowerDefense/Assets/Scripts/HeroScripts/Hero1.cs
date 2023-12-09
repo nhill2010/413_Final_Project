@@ -41,8 +41,8 @@ public class Hero1 : Hero
 
             // initialize the projectile in the direction of the nearest enemy
             projectile.Init(this.transform.position,
-                            projectEnemyPosition( enemyClosestToColony ) - this.transform.position,
-                            projectileSpeed, HeroDamage, true, RangeRadius);
+                            projectAngleToEnemy(enemyClosestToColony), 
+                            projectileSpeed, HeroDamage, true, RangeRadius, friendlyFire, this);
         }
     }
 }
